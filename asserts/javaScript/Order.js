@@ -52,7 +52,7 @@ window.onload = function() {
                     <div id="content-item">
                     <div id="box">
                         <p id="content">${item.name}</p>
-                        <p class="price">${itemTotal.toLocaleString()}đ</p>
+                        <p class="price">${itemTotal.toLocaleString()}VNĐ</p>
                     </div>
                         <p id= "quantity">Quantity: ${item.quantity}</p>
                     </div>
