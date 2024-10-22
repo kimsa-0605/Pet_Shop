@@ -28,56 +28,56 @@ var best_selling = [
             id: 4,
             name: "Chicken nugget",
             price: "150.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "/asserts/image/bestFood1.webp",
             description: "Crunchy chicken nuggets. Nutritional composition: Crude protein ≥25%, Crude fat ≤7%, Moisture ≤12%. Perfect for snacks."
         },
         {
             id: 5,
-            name: "Salmon strips",
+            name: "Dinosaur",
             price: "200.000",
-            image: "/asserts/image/feturedHomepage1.webp",
-            description: "Soft salmon strips, rich in omega-3. Nutritional composition: Crude protein ≥22%, Crude fat ≤8%, Moisture ≤10%. Great for promoting healthy skin."
+            image: "/asserts/image/bestFashion1.webp",
+            description: "Fun and playful green dinosaur hoodie, perfect for adding a touch of adventure to your wardrobe. Made from soft, comfortable fabric with a hood featuring cute dinosaur spikes. Ideal for both kids and adults who love a quirky, unique style. Great for casual outings or cozy days at home."
         },
         {
             id: 6,
-            name: "Lamb cubes",
+            name: "Schoolgirl dress",
             price: "210.000",
-            image: "/asserts/image/feturedHomepage1.webp",
-            description: "Tender lamb cubes. Nutritional composition: Crude protein ≥24%, Crude fat ≤6%, Moisture ≤9%. Good for muscle growth."
+            image: "/asserts/image/bestFashion2.webp",
+            description: "Classic and charming schoolgirl dress, perfect for everyday wear or special occasions. Designed with a youthful and preppy style, made from soft, durable fabric. This dress offers both comfort and elegance, ideal for creating a fresh and vibrant look."
         },
         {
             id: 7,
             name: "Duck bites",
             price: "190.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "/asserts/image/bestFood3.webp",
             description: "Tasty duck bites, easy to digest. Nutritional composition: Crude protein ≥21%, Crude fat ≤5%, Moisture ≤10%. Ideal for sensitive stomachs."
         },
         {
             id: 8,
             name: "Turkey slices",
             price: "170.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "/asserts/image/bestFood2.webp",
             description: "Lean turkey slices, high in protein. Nutritional composition: Crude protein ≥23%, Crude fat ≤4%, Moisture ≤11%. Excellent for active pets."
         },
         {
             id: 9,
-            name: "Pork twists",
+            name: "Cute hoodie",
             price: "160.000",
-            image: "/asserts/image/feturedHomepage1.webp",
-            description: "Twisted pork sticks, chewy texture. Nutritional composition: Crude protein ≥20%, Crude fat ≤5%, Moisture ≤10%. Great for teeth cleaning."
+            image: "/asserts/image/bestFashion4.webp",
+            description: "Adorable and cozy hoodie, perfect for casual wear or lounging at home. Made from soft, breathable fabric, ensuring both comfort and warmth. Features a cute design, making it a stylish addition to your wardrobe for any season."
         },
         {
             id: 10,
-            name: "Venison jerky",
+            name: "Ladylike dress",
             price: "220.000",
-            image: "/asserts/image/feturedHomepage1.webp",
-            description: "Savory venison jerky, rich in iron. Nutritional composition: Crude protein ≥26%, Crude fat ≤6%, Moisture ≤9%. Ideal for muscle repair."
+            image: "/asserts/image/bestFashion3.webp",
+            description: "Elegant and feminine ladylike dress, perfect for special occasions or everyday wear. Made from high-quality fabric, designed to provide comfort and style. Features a classic silhouette with delicate details, ensuring you look graceful and poised.",
         },
         {
             id: 11,
             name: "Tuna chips",
             price: "140.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "/asserts/image/bestFood4.webp",
             description: "Crispy tuna chips, light and crunchy. Nutritional composition: Crude protein ≥22%, Crude fat ≤4%, Moisture ≤10%. Perfect for light snacking."
         }
 ]
@@ -95,8 +95,11 @@ function createCard(fetured_products, i) {
         demo += '</div>';
         demo += '<p class="price"><b>' + fetured_products[i].price + ' VNĐ</b></p>';
         demo += `</a>`;
-        demo += `<button id="myBtn-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>`;
+        demo += `<button id="myBtn-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="cart-hover">`;
+        demo += `<span id="myBtn-icon-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="fa-solid fa-cart-shopping"></span>`
+        demo += `</button>`;
         demo += '</div>';
+        
     return demo;
 }
 
@@ -115,7 +118,7 @@ function createCard_Best(best_selling, i) {
         demo += '</div>';
         demo += `</a>`;
         demo += `<button id="myBtn-best" onclick="addToCartHomePage(${best_selling[i].id})" class="cart-hover">`;
-        demo += `<span class="fa-solid fa-cart-shopping"></span>`;
+        demo += `<span id="myBtn-icon-best" onclick="addToCartHomePage(${best_selling[i].id})" class="fa-solid fa-cart-shopping"></span>`;
         demo += `</button>`;
     return demo;
 }
@@ -168,13 +171,10 @@ window.onload = function() {
 // --------------------------------------MODAL------------------------
 
 var modal = document.getElementById("myModal");
-console.log(modal)
-
 var btnBest = document.getElementById("myBtn-best");
-console.log(btnBest)
-
 var btnFetured = document.getElementById("myBtn-fetured");
-console.log(btnBest)
+var btnIconBest = document.getElementById("myBtn-icon-best");
+var btnIconFetured = document.getElementById("myBtn-icon-fetured");
 
 
 var span = document.getElementsByClassName("close")[0];
@@ -185,8 +185,20 @@ document.getElementById("best-product-content").addEventListener("click", functi
         modal.style.display = "block";
     }
 });
+
+document.getElementById("best-product-content").addEventListener("click", function(event) {
+    if (event.target && event.target.id === "myBtn-icon-best") {
+        modal.style.display = "block";
+    }
+});
 document.getElementById("fetured_products").addEventListener("click", function(event) {
     if (event.target && event.target.id === "myBtn-fetured") {
+        modal.style.display = "block";
+    }
+});
+
+document.getElementById("fetured_products").addEventListener("click", function(event) {
+    if (event.target && event.target.id === "myBtn-icon-fetured") {
         modal.style.display = "block";
     }
 });
@@ -204,12 +216,14 @@ window.onclick = function(event) {
 }
 // ----------------------------------------------------GIỎ HÀNG-------------------------------------------------
 // Hiển thị ở giỏ hàng
+const getUserID = localStorage.getItem("userID");
 
 let getData = (key) => {
     const data  = localStorage.getItem(key);
     return data ? JSON.parse(data) : [];
 }
-let userData = getData("productInCart")
+
+let userData = getData("productInCart");
 console.log(userData);
 console.log(Array.isArray(userData));
 if(userData){
@@ -217,9 +231,9 @@ if(userData){
 }else{
     console.log('Error')
 }
-
-function renderProductsToTable(userData, i) {
-    const { image, name, quantity, price } = userData[i]; 
+let userDataRender = userData.filter(value => value.userID == getUserID);
+function renderProductsToTable(userDataRender, i) {
+    const { image, name, quantity, price } = userDataRender[i]; 
     return `
         <tr class="produc_In_Cart">
             <td class="moldal-detail">
@@ -243,9 +257,9 @@ function renderProductsToTable(userData, i) {
 // Hiển thị sản phẩm trong giỏ hàng
 function listCart() {
     document.getElementById("product-cart").innerHTML = '';
-    
-    for (let i = 0; i < userData.length; i++) {
-        let card = renderProductsToTable(userData, i);
+    let userDataRender = getData("productInCart").filter(value => value.userID == getUserID);
+    for (let i = 0; i < userDataRender.length; i++) {
+        let card = renderProductsToTable(userDataRender, i);
         document.getElementById("product-cart").innerHTML += card;
     }
 }
@@ -253,16 +267,16 @@ listCart();
 
 // Tính tổng số lượng sản phẩm có trong giỏ hàng
 function totalProduct() {
-    document.getElementById("total").innerHTML = userData.length;
+    document.getElementById("total").innerHTML = userDataRender.length;
 }
 totalProduct();
 
 // Tổng số tiền cho tất cả sản phẩm
 function totalMoney() {
-    if (userData.length > 0) {
+    if (userDataRender.length > 0) {
         let total = 0;
-        for (let i = 0; i < userData.length; i++) {
-            total += userData[i].quantity * (userData[i].price.replace(/\./g, '')).toLocaleString()
+        for (let i = 0; i < userDataRender.length; i++) {
+            total += userDataRender[i].quantity * (userDataRender[i].price.replace(/\./g, '')).toLocaleString()
         }
 
         document.getElementById("total-money").innerHTML = total.toLocaleString();
@@ -272,8 +286,8 @@ totalMoney();
 
 // Nút + tăng số lượng mua
 function plusQuantity(index) {
-    userData[index].quantity++;
-    localStorage.setItem("productInCart", JSON.stringify(userData));
+    userDataRender[index].quantity++;
+    localStorage.setItem("productInCart", JSON.stringify(userDataRender));
     listCart();
     totalProduct();
     totalMoney();  
@@ -282,8 +296,8 @@ function plusQuantity(index) {
 // Nút - giảm số lượng mua
 function minusQuantity(index, quantity) {
     if (quantity > 1) {
-        userData[index].quantity--;
-        localStorage.setItem("productInCart", JSON.stringify(userData));
+        userDataRender[index].quantity--;
+        localStorage.setItem("productInCart", JSON.stringify(userDataRender));
     }
     else {
         alert("Quantity min is 1")
@@ -300,20 +314,22 @@ const feturedProducts = JSON.parse(localStorage.getItem('fetured_products')) || 
 const bestSelling = JSON.parse(localStorage.getItem('best_selling')) || [];
 products = feturedProducts.concat(bestSelling);
 
-// Thêm sản phẩm vào giỏ hàng 
-const getUserID = localStorage.getItem("userID");
+// Thêm sản phẩm vào giỏ hàng cho user id
 function addToCartHomePage(id) {
     console.log(id);
-    let checkProductInCart = userData.some(value => value.id === id);
+    let checkProductInCart = userData.some(value => value.id == id && value.userID == getUserID);
     console.log(checkProductInCart);
+    // Kiểm tra xem đã có đơn hàng chưa
     if(!checkProductInCart) {
-        let pInProduct = products.find(value => value.id ===  id);
+        // Tạo mới đơn hàng và lưu cho user id
+        let pInProduct = products.find(value => value.id === id );
         console.log(pInProduct);
         userData.unshift ({
             ...pInProduct,
             quantity: 1,
             userID: getUserID
         })
+        console.log("Kiem tra don haang: ",userData.find(value => value.id ===  id && value.userID == getUserID));
         localStorage.setItem("productInCart", JSON.stringify(userData));
     }else {
         let getIndex = userData.findIndex(value => value.id === id);
@@ -357,8 +373,8 @@ document.getElementById("product-cart").addEventListener('click', function(event
 
 // Lưu vào local storage sản phẩm muốn mua và chuyển sang trang order khi nhấn nút order
 function Order() {
-    if (userData.length > 0) {
-        localStorage.setItem('orderDetails', JSON.stringify(userData));
+    if (userDataRender.length > 0) {
+        localStorage.setItem('orderDetails', JSON.stringify(userDataRender));
         window.location.href = "/pages/Order.html";
     } else {
         alert("Giỏ hàng của bạn trống!");

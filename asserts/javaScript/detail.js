@@ -102,7 +102,7 @@ if(userDataInCart){
 
 function addToCart(id) {
     console.log(id);
-    let checkProduct = userDataInCart.some(value => value.id === id);
+    let checkProduct = userDataInCart.some(value => value.id === id && value.userID == userID);
     console.log(checkProduct);
     if(!checkProduct) {
         let pInProduct = products.find(value => value.id ===  id);

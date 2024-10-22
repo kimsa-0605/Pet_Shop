@@ -61,7 +61,7 @@ if (getDataUser) {
                 <div class="a-image-content">
                     <img src="${getDataUser.image || '/asserts/image/avatar.jpg'}" alt="User Avatar">
                 </div>
-                <p class="name-User-profile"><b>${getDataUser.fullName}</b></p>
+                <p class="name-User-profile"><b>${getDataUser.name}</b></p>
             </div>
         `;
     }    
