@@ -149,8 +149,27 @@ function buyNow(productId) {
             userID: userID
         };
         localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-        window.location.href = "/pages/cartt.html";
+        window.location.href = "/pages/Order.html";
     } else {
         console.error('The product does not exist.');
+    }
+}
+
+function dieu_huong(page) {
+    if (page === 'AboutUs') {
+        location.assign("/pages/About.html");
+    } else if (page === 'Fashion') {
+        location.assign("/pages/detail.html");
+    } else if (page === 'Food') {
+        location.assign("/pages/boloc.html");
+    } else if (page === 'Home') {
+        location.assign("/pages/homePage.html");
+    }else if (page === 'Cart') {
+        location.assign("/pages/cartt.html");
+    } else if (page === 'User') {
+        location.assign("/pages/profile.html");
+    }
+    else {
+        alert("Trang không tồn tại!");
     }
 }

@@ -241,13 +241,13 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("detailt.html");
+        location.assign("/pages/detail.html");
     } else if (page === 'Food') {
-        location.assign("/FoodPage/boloc.html");
+        location.assign("/pages/boloc.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
     }else if (page === 'Cart') {
-        location.assign("/Cart/gio.html");
+        location.assign("/pages/cartt.html");
     } else if (page === 'User') {
         location.assign("/pages/profile.html");
     }

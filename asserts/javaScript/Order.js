@@ -65,7 +65,7 @@ window.onload = function() {
     document.getElementById('cancel-button').addEventListener('click', function() {
         // Xóa sản phẩm khỏi localStorage
         localStorage.removeItem('orderDetails');
-        window.location.href = '/Pet_Shop/pages/homePage.html'; // Cần đúng trang chủ muốn quay lại
+        window.location.href = '/pages/homePage.html'; // Cần đúng trang chủ muốn quay lại
     });
 };
 
