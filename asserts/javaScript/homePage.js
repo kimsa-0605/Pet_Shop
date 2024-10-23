@@ -3,7 +3,7 @@ var fetured_products = [
         id: 1,
         name: "Dried meat",        
         price: "200.000",
-        image: "/asserts/image/feturedHomepage1.webp",
+        image: "../asserts/image/feturedHomepage1.webp",
         description: "Roasted and smoked beef liver for dogs. Nutritional composition: Crude protein ≥18%, Crude fat ≥5%, Crude fiber ≤9%, Crude ash ≤1%, Minerals ≥1.5%, Calcium ≥1.2%, Phosphorus ≥0.5%, Salt ≤0.09%, Moisture ≤10%. Suitable for all breeds.",
         
     },
@@ -11,14 +11,14 @@ var fetured_products = [
         id: 2,
         name: "Chicken jerky",
         price: "150.000",
-        image: "/asserts/image/feturedHomepage2.webp",
+        image: "../asserts/image/feturedHomepage2.webp",
         description: "Chicken jerky strips, high in protein. Nutritional composition: Crude protein ≥22%, Crude fat ≤3%, Moisture ≤12%. Perfect for dogs with sensitive stomachs.",
     },
     {
         id: 3,
         name: "Beef bites",        
         price: "180.000",
-        image: "/asserts/image/feturedHomepage3.webp",
+        image: "../asserts/image/feturedHomepage3.webp",
         description: "Small beef bites, easy to chew. Nutritional composition: Crude protein ≥20%, Crude fat ≤5%, Moisture ≤11%. Ideal for training.",
     }
 ]
@@ -28,56 +28,56 @@ var best_selling = [
             id: 4,
             name: "Chicken nugget",
             price: "150.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Crunchy chicken nuggets. Nutritional composition: Crude protein ≥25%, Crude fat ≤7%, Moisture ≤12%. Perfect for snacks."
         },
         {
             id: 5,
             name: "Salmon strips",
             price: "200.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Soft salmon strips, rich in omega-3. Nutritional composition: Crude protein ≥22%, Crude fat ≤8%, Moisture ≤10%. Great for promoting healthy skin."
         },
         {
             id: 6,
             name: "Lamb cubes",
             price: "210.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Tender lamb cubes. Nutritional composition: Crude protein ≥24%, Crude fat ≤6%, Moisture ≤9%. Good for muscle growth."
         },
         {
             id: 7,
             name: "Duck bites",
             price: "190.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Tasty duck bites, easy to digest. Nutritional composition: Crude protein ≥21%, Crude fat ≤5%, Moisture ≤10%. Ideal for sensitive stomachs."
         },
         {
             id: 8,
             name: "Turkey slices",
             price: "170.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Lean turkey slices, high in protein. Nutritional composition: Crude protein ≥23%, Crude fat ≤4%, Moisture ≤11%. Excellent for active pets."
         },
         {
             id: 9,
             name: "Pork twists",
             price: "160.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Twisted pork sticks, chewy texture. Nutritional composition: Crude protein ≥20%, Crude fat ≤5%, Moisture ≤10%. Great for teeth cleaning."
         },
         {
             id: 10,
             name: "Venison jerky",
             price: "220.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Savory venison jerky, rich in iron. Nutritional composition: Crude protein ≥26%, Crude fat ≤6%, Moisture ≤9%. Ideal for muscle repair."
         },
         {
             id: 11,
             name: "Tuna chips",
             price: "140.000",
-            image: "/asserts/image/feturedHomepage1.webp",
+            image: "../asserts/image/feturedHomepage1.webp",
             description: "Crispy tuna chips, light and crunchy. Nutritional composition: Crude protein ≥22%, Crude fat ≤4%, Moisture ≤10%. Perfect for light snacking."
         }
 ]
@@ -143,17 +143,17 @@ function listProducts() {
 // -------------------------------------ĐIỀU HƯỚNG-------------------------------
 function dieu_huong(page) {
     if (page === 'AboutUs') {
-        location.assign("/pages/About.html");
+        location.assign("../../pages/homePage.html");
     } else if (page === 'Fashion') {
-        location.assign("detailt.html");
+        location.assign("../../pages/detail.html");
     } else if (page === 'Food') {
-        location.assign("/FoodPage/boloc.html");
+        location.assign("../../pages/boloc.html");
     } else if (page === 'Home') {
-        location.assign("/pages/homePage.html");
+        location.assign("../../pages/homePage.html");
     }else if (page === 'Cart') {
-        location.assign("/pages/cartt.html");
+        location.assign("../../pages/cartt.html");
     } else if (page === 'User') {
-        location.assign("/pages/profile.html");
+        location.assign("../../pages/profile.html");
     }
     else {
         alert("Trang không tồn tại!");
@@ -359,7 +359,7 @@ document.getElementById("product-cart").addEventListener('click', function(event
 function Order() {
     if (userData.length > 0) {
         localStorage.setItem('orderDetails', JSON.stringify(userData));
-        window.location.href = "/pages/Order.html";
+        window.location.href = "../pages/Order.html";
     } else {
         alert("Giỏ hàng của bạn trống!");
     }
