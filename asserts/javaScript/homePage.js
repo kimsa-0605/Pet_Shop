@@ -3,7 +3,7 @@ var fetured_products = [
         id: 1,
         name: "Dried meat",        
         price: "200.000",
-        image: "/asserts/image/feturedHomepage1.webp",
+        image: "../asserts/image/feturedHomepage1.webp",
         description: "Roasted and smoked beef liver for dogs. Nutritional composition: Crude protein ≥18%, Crude fat ≥5%, Crude fiber ≤9%, Crude ash ≤1%, Minerals ≥1.5%, Calcium ≥1.2%, Phosphorus ≥0.5%, Salt ≤0.09%, Moisture ≤10%. Suitable for all breeds.",
         
     },
@@ -11,14 +11,14 @@ var fetured_products = [
         id: 2,
         name: "Chicken jerky",
         price: "150.000",
-        image: "/asserts/image/feturedHomepage2.webp",
+        image: "../asserts/image/feturedHomepage2.webp",
         description: "Chicken jerky strips, high in protein. Nutritional composition: Crude protein ≥22%, Crude fat ≤3%, Moisture ≤12%. Perfect for dogs with sensitive stomachs.",
     },
     {
         id: 3,
         name: "Beef bites",        
         price: "180.000",
-        image: "/asserts/image/feturedHomepage3.webp",
+        image: "../asserts/image/feturedHomepage3.webp",
         description: "Small beef bites, easy to chew. Nutritional composition: Crude protein ≥20%, Crude fat ≤5%, Moisture ≤11%. Ideal for training.",
     }
 ]
@@ -64,8 +64,7 @@ var best_selling = [
             name: "Cute hoodie",
             price: "160.000",
             image: "/asserts/image/bestFashion4.webp",
-            description: "Adorable and cozy hoodie, perfect for casual wear or lounging at home. Made from soft, breathable fabric, ensuring both comfort and warmth. Features a cute design, making it a stylish addition to your wardrobe for any season."
-        },
+            description: "Adorable and cozy hoodie, perfect for casual wear or lounging at home. Made from soft, breathable fabric, ensuring both comfort and warmth. Features a cute design, making it a stylish addition to your wardrobe for any season."        },
         {
             id: 10,
             name: "Ladylike dress",
@@ -146,17 +145,17 @@ function listProducts() {
 // -------------------------------------ĐIỀU HƯỚNG-------------------------------
 function dieu_huong(page) {
     if (page === 'AboutUs') {
-        location.assign("/pages/About.html");
+        location.assign("../../pages/homePage.html");
     } else if (page === 'Fashion') {
-        location.assign("detailt.html");
+        location.assign("../../pages/detail.html");
     } else if (page === 'Food') {
-        location.assign("/FoodPage/boloc.html");
+        location.assign("../../pages/boloc.html");
     } else if (page === 'Home') {
-        location.assign("/pages/homePage.html");
+        location.assign("../../pages/homePage.html");
     }else if (page === 'Cart') {
-        location.assign("/pages/cartt.html");
+        location.assign("../../pages/cartt.html");
     } else if (page === 'User') {
-        location.assign("/pages/profile.html");
+        location.assign("../../pages/profile.html");
     }
     else {
         alert("Trang không tồn tại!");

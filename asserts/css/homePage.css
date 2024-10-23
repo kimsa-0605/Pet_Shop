@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     width: 1440px;
-    background-image: url('/asserts/image/backgroudHeader.png'); /* Đảm bảo đường dẫn đúng */
+    background-image: url('../image/backgroudHeader.png'); /* Đảm bảo đường dẫn đúng */
 }
 
 .hero {
