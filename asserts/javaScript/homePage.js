@@ -359,7 +359,7 @@ document.getElementById("product-cart").addEventListener('click', function(event
 
 // Lưu vào local storage sản phẩm muốn mua và chuyển sang trang order khi nhấn nút order
 function Order() {
-    if (userDataRender.length > 0) {
+    if (userDataRender.length) {
         localStorage.setItem('orderDetails', JSON.stringify(userDataRender));
         window.location.href = "/pages/Order.html";
     } else {
