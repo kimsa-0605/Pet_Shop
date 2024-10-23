@@ -179,29 +179,16 @@ var btnIconFetured = document.getElementById("myBtn-icon-fetured");
 
 var span = document.getElementsByClassName("close")[0];
 
-// Khi nhấn nút giỏ hàng thì mở modal ra
-document.getElementById("best-product-content").addEventListener("click", function(event) {
-    if (event.target && event.target.id === "myBtn-best") {
-        modal.style.display = "block";
-    }
-});
-
-document.getElementById("best-product-content").addEventListener("click", function(event) {
-    if (event.target && event.target.id === "myBtn-icon-best") {
-        modal.style.display = "block";
-    }
-});
-document.getElementById("fetured_products").addEventListener("click", function(event) {
-    if (event.target && event.target.id === "myBtn-fetured") {
-        modal.style.display = "block";
-    }
-});
-
-document.getElementById("fetured_products").addEventListener("click", function(event) {
-    if (event.target && event.target.id === "myBtn-icon-fetured") {
-        modal.style.display = "block";
-    }
-});
+// Hàm để mở modal khi nhấn vào nút có id phù hợp
+function openModalOnClick(parentId, buttonId1, buttonId2) {
+    document.getElementById(parentId).addEventListener("click", function(event) {
+        if (event.target && (event.target.id === buttonId1 || event.target.id === buttonId2)) {
+            modal.style.display = "block";
+        }
+    });
+}
+openModalOnClick("best-product-content", "myBtn-best", "myBtn-icon-best");
+openModalOnClick("fetured_products", "myBtn-fetured", "myBtn-icon-fetured");
 
 // Tắt modal khi bấm nút x
 span.onclick = function() {
