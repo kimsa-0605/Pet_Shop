@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/asserts/css/About.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/asserts/css/detail.css">
     <!-- ICONS: Line Awesome -->
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -21,9 +22,9 @@
 
 <body onload="listProducts()">
     <div class="container">
-        <!-- Start Header -->
-        <div class="app">
-            <div class="hero">
+        <!-- Start header -->
+        <div class="appOther">
+            <div class="heroOther">
                 <div class="head_1">
                     <div class="header_1-left">
                         <div class="header_1-left-telephone header_content">
@@ -39,6 +40,8 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <p>8592 Fairground St. Tallahassee, FL 32303</p>
                     </div>
+
+                    
                 </div>
                 <div class="head_2">
                     <div class="shop-logo">
@@ -47,10 +50,10 @@
                     </div>
                     <div class="menu">
                         <ul class="list-menu">
-                            <li>Home</li>
-                            <li>Fashion</li>
-                            <li>Food</li>
-                            <li>About Us</li>
+                            <li onclick="dieu_huong('Home')" >Home</li>
+                            <li onclick="dieu_huong('Fashion')">Fashion</li>
+                            <li onclick="dieu_huong('Food')">Food</li>
+                            <li onclick="dieu_huong('AboutUs')">About Us</li>
                         </ul>
                     </div>
                     <div class="input-head">
@@ -60,18 +63,6 @@
                         </div>
                         <i class="fa-regular fa-user" onclick="dieu_huong('User')"></i>
                         <i class="fa-solid fa-cart-shopping" onclick="dieu_huong('Cart')"></i>
-                    </div>
-                </div>
-                <div class="hero_content">
-                    <div class="hero_content-left">
-                        <h5>Pet Shop</h5>
-                        <h2>The friendly and 
-                            caring small pet store
-                        </h2>
-                        <p>At et vehicula sodales est proin turpis pellentesque sinulla a aliquam amet rhoncus quisque eget sit</p>
-                    </div>
-                    <div class="hero_content-right">
-                        <img src="/asserts//image/dogHomepage.png" alt="">
                     </div>
                 </div>
             </div>

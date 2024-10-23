@@ -171,3 +171,22 @@ document.getElementById('right').addEventListener('click', right);
 
 // Bắt đầu với thành viên đầu tiên
 detailsMember();
+
+function dieu_huong(page) {
+    if (page === 'AboutUs') {
+        location.assign("/pages/About.html");
+    } else if (page === 'Fashion') {
+        location.assign("/pages/detail.html");
+    } else if (page === 'Food') {
+        location.assign("/pages/boloc.html");
+    } else if (page === 'Home') {
+        location.assign("/pages/homePage.html");
+    }else if (page === 'Cart') {
+        location.assign("/pages/cartt.html");
+    } else if (page === 'User') {
+        location.assign("/pages/profile.html");
+    }
+    else {
+        alert("Trang không tồn tại!");
+    }
+}
