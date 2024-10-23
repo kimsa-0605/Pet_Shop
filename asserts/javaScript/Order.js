@@ -1,31 +1,6 @@
 let totalAmount = 0; // Khai báo biến toàn cục
 
 window.onload = function() {
-    // Thêm sản phẩm mẫu để kiểm tra hiển thị nếu chưa có dữ liệu
-    // if (!localStorage.getItem('orderDetails')) {
-    //     const sampleOrderDetails = [
-    //         {
-    //             name: "Dog Food",
-    //             price: "150,000",
-    //             quantity: 50,
-    //             image: "https://bizweb.dktcdn.net/thumb/grande/100/448/728/products/878713e9-7dc7-46e2-82f4-9b498ed9f750.jpg?v=1722691346977"
-    //         },
-    //         {
-    //             name: "Cat Toy",
-    //             price: "50,000",
-    //             quantity: 100,
-    //             image: "https://bizweb.dktcdn.net/thumb/grande/100/448/728/products/878713e9-7dc7-46e2-82f4-9b498ed9f750.jpg?v=1722691346977"
-    //         },
-    //         {
-    //             name: "Cat Toy",
-    //             price: "50,000",
-    //             quantity: 5,
-    //             image: "https://bizweb.dktcdn.net/thumb/grande/100/448/728/products/878713e9-7dc7-46e2-82f4-9b498ed9f750.jpg?v=1722691346977"
-    //         }
-    //     ];
-    //     localStorage.setItem('orderDetails', JSON.stringify(sampleOrderDetails));
-    // }
-
     // Mã hiển thị sản phẩm
     let orderDetails = JSON.parse(localStorage.getItem('orderDetails')) || [];
     let orderHTML = '';
@@ -52,7 +27,7 @@ window.onload = function() {
                     <div id="content-item">
                     <div id="box">
                         <p id="content">${item.name}</p>
-                        <p class="price">${itemTotal.toLocaleString()}VNĐ</p>
+                        <p class="price">${formatPrice(itemTotal)}VNĐ</p>
                     </div>
                         <p id= "quantity">Quantity: ${item.quantity}</p>
                     </div>
@@ -67,13 +42,17 @@ window.onload = function() {
             <div class="summary">
                 <p id="subtotal">Subtotal: <span>${totalAmount.toLocaleString()}VNĐ</span></p>
                 <p id="fee">Shipping fee: <span>-</span></p>
-                <p id="sum">Total: <span>${totalAmount.toLocaleString()}VNĐ</span></p>
+                <p id="sum">Total: <span>${formatPrice(totalAmount)}VNĐ</span></p>
             </div>
             <div class="pay">
                 <button id="cancel-button" class="order-btn">Cancel</button>
                 <button id="pay-button" class="order-btn">Pay now</button>
             </div>
         `;
+    }
+
+    function formatPrice(price) {
+        return (parseFloat(price) * 1000).toLocaleString('de-DE'); // Nhân giá với 1000 và định dạng dấu "." cho hàng nghìn
     }
 
     // Gắn sự kiện cho nút "Pay now" sau khi nội dung trang đã được tải
