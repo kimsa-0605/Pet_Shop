@@ -40,7 +40,7 @@ window.onload = function() {
             ${orderHTML}
             </div>
             <div class="summary">
-                <p id="subtotal">Subtotal: <span>${totalAmount.toLocaleString()}VNĐ</span></p>
+                <p id="subtotal">Subtotal: <span>${formatPrice(totalAmount)}VNĐ</span></p>
                 <p id="fee">Shipping fee: <span>-</span></p>
                 <p id="sum">Total: <span>${formatPrice(totalAmount)}VNĐ</span></p>
             </div>
