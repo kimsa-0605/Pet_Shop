@@ -2,7 +2,7 @@ const initialProductsFashion = [{
     id: 1,
     name: 'Luxury Cat Sweater',
     price: 250000,
-    image: "/meo1.webp",
+    image: "/asserts/image/meo1.webp",
     description: "A premium, stylish sweater made from soft, high-quality materials to keep your cat cozy and fashionable.",
     nature: {
         type: 'Cat Fashion'
@@ -11,7 +11,7 @@ const initialProductsFashion = [{
     id: 2,
     name: 'Designer Dog Hoodie',
     price: 299000,
-    image: "/cho1.webp",
+    image: "/asserts/image/cho1.webp",
     description: "A trendy dog hoodie made with breathable fabric, perfect for walks or lounging in style.",
     nature: {
         type: 'Dog Fashion'
@@ -20,7 +20,7 @@ const initialProductsFashion = [{
     id: 3,
     name: 'Elegant Dog Jacket',
     price: 200000,
-    image: "/cho2.webp",
+    image: "/asserts/image/cho2.webp",
     description: "A fashionable jacket for dogs, designed to offer warmth and style for outdoor adventures.",
     nature: {
         type: 'Dog Fashion'
@@ -29,7 +29,7 @@ const initialProductsFashion = [{
     id: 4,
     name: 'Chic Cat Bowtie',
     price: 250000,
-    image: "/meo2.jpg",
+    image: "/asserts/image/meo2.webp",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -38,7 +38,7 @@ const initialProductsFashion = [{
     id: 5,
     name: 'Casual Cat Collar',
     price: 350000,
-    image: "/meo5.jpg",
+    image: "/asserts/image/meo5.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -47,7 +47,7 @@ const initialProductsFashion = [{
     id: 6,
     name: 'Classic Cat Bandana',
     price: 280000,
-    image: "/meo4.jpg",
+    image: "/asserts/image/meo5.webp",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -56,7 +56,7 @@ const initialProductsFashion = [{
     id: 7,
     name: 'Floral Dog Scarf',
     price: 150000,
-    image: "/cho3.webp",
+    image: "/asserts/image/cho5.webp",
     description: "A fresh, floral-patterned scarf for dogs, adding style to any outing or event.",
     nature: {
         type: 'Dog Fashion'
@@ -65,7 +65,7 @@ const initialProductsFashion = [{
     id: 8,
     name: 'Bold Dog T-shirt',
     price: 250000,
-    image: "/cho4.webp",
+    image: "/asserts/image/cho4.webp",
     description: "A bold and comfy t-shirt for dogs, designed with soft fabric for everyday wear.",
     nature: {
         type: 'Dog Fashion'
@@ -74,7 +74,7 @@ const initialProductsFashion = [{
     id: 9,
     name: 'Sporty Dog Tank Top',
     price: 199000,
-    image: "/cho5.jpg",
+    image: "/asserts/image/cho5.webp",
     description: "A sporty tank top for active dogs, perfect for hot weather and high-energy activities.",
     nature: {
         type: 'Dog Fashion'
@@ -85,7 +85,7 @@ const featuredProductsFashion = [{
     id: 4,
     name: 'Chic Cat Bowtie',
     price: 150000,
-    image: "/meo2.jpg",
+    image: "/asserts/image/meo2.webp",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -94,7 +94,7 @@ const featuredProductsFashion = [{
     id: 5,
     name: 'Casual Cat Collar',
     price: 300000,
-    image: "/meo5.jpg",
+    image: "/asserts/image/meo5.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -103,7 +103,7 @@ const featuredProductsFashion = [{
     id: 6,
     name: 'Classic Cat Bandana',
     price: 250000,
-    image: "/meo4.jpg",
+    image: "/asserts/image/meo4.webp",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -133,20 +133,20 @@ function showFeaturedProductsFashion(featuredProductsFashion) {
         const newItem = document.createElement('div');
         newItem.classList.add('box_itemFashion');
         newItem.innerHTML = `
-    <div class="imgH"><img src="${item.image}" alt="Product"></div>
-    <div class="detailH">
-        <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
-            <p class="titleH"><b>${item.name}</p>
-            <p class="priceH"><b>${item.price.toFixed(2)} VNĐ</p>
-        </a>
-         <div class="icon-products">
-             <i class="fa-regular fa-heart" style="color: orange;"></i>
-         </div>
-         <button id="featured-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
-         <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
-       
-    </div>
-`;
+            <div class="imgH"><img src="${item.image}" alt="Product"></div>
+            <div class="detailH">
+                <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
+                    <p class="titleH">${item.name}</p>
+                    <p class="priceH">${item.price.toFixed(2)} VNĐ</p>
+                </a>
+                <div class="icon-products">
+                    <i class="fa-regular fa-heart" style="color: orange;"></i>
+                </div>
+                <button id="featured-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
+                <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
+            
+            </div>
+        `;
         // <button id="featured-fashion" onclick="addToCartHomePage(${featuredProductsFashion[i].id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
         featuredProductsFashionBox.appendChild(newItem);
     });

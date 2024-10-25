@@ -33,7 +33,7 @@ function displayProductDetail() {
                 <img src="${product.image}" id="image" alt="Products_img">
                 <div class="detailt">
                     <p class="title-p">${product.name}</p>
-                    <p class="price">${product.price} VNĐ</p>
+                    <p class="detail-price">${product.price} VNĐ</p>
 
                     <div class="quantity-container">
                         <button onclick="minusQuantityDetail()" class="decrease-btn">-</button>

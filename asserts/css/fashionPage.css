@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.containerFashion {
+.containerFSh {
     border: 10px black;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -339,7 +339,7 @@ i {
     /* Loại bỏ gạch chân */
 }
 
-.no-underline {
+.text-no-underline {
     text-decoration: none;
     /* Loại bỏ gạch chân */
 }
