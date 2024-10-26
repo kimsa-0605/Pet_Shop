@@ -58,6 +58,7 @@ p.priceFashion {
     align-items: center;
     justify-content: space-around;
     border: 1px solid #ccc;
+    text-align: center;
     width: 120px;
     margin-top: 20px;
 }

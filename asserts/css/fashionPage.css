@@ -61,16 +61,15 @@
 }
 
 .box_itemFashion {
-    width: 344px;
+    width: 380px;
     height: 508px;
     border-radius: 10px;
-    border: 1px solid #ff8c00;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 .box_itemFashion img {
-    width: 342px;
+    width: 100%;
     height: 416px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -80,8 +79,8 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     column-gap: 15px;
-    margin-left: 10px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
 .box_itemFashion .detailH .icon-products i {
@@ -101,7 +100,7 @@
 
 /* Đặt icon giỏ hàng ẩn ban đầu */
 
-.box_itemFashion .fa-cart-shopping {
+.box_itemFashion .fa-cart-shopping, .product_itemFashion .fa-cart-shopping{
     font-size: 20px;
     /* Kích thước của icon */
     color: white;
@@ -191,15 +190,14 @@
     margin-bottom: 10px;
 }
 
-.filterF .itemFashion input,
-.filterF .itemFashion button {
-    width: 100%;
-    padding: 5px;
-    /* border: none; */
+.filterF .itemFashion input {
+    width: 230px;
+    height: 35px;
     background-color: transparent;
-    border-left: 1px solid #ddd;
+    border: 1px solid black;
     outline: none;
     border-radius: 5px;
+    padding-left: 5px;
 }
 
 .filterF .itemFashion label {
@@ -208,9 +206,14 @@
 
 .filterF .itemFashion.submit button {
     background-color: #f1892f;
+    width: 235px;
+    padding: 10px 0px 10px 0px;
     color: #fff;
 }
 
+.filterF .itemFashion.submit button:hover {
+    background-color: #f18a2fcb;
+}
 
 /*-----------------------*/
 
@@ -239,9 +242,6 @@
     margin-right: 10px;
 }
 
-.priceFa {
-    border-color: #e67e22;
-}
 
 .filterF button {
     background-color: #ff8c00;
@@ -285,10 +285,31 @@
 
 .filterF .searchFashion input {
     padding: 5px;
-    border-radius: 10px;
-    height: 30px;
-    width: 280px;
-    margin-bottom: 35px;
+    border-radius: 5px;
+    height: 25px;
+    width: 235px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.nonListP {
+    margin-top: 150px;
+    text-align: center;
+    margin-left: 150px;
+}
+
+.nonresult{
+    padding-left: 15px;
+    width: 600px;
+}
+
+.fa-ban {
+    margin-right: 5px;
+}
+
+.nonresult i {
+    font-size: 14px;
+    color: rgb(150, 147, 147);   
 }
 
 .productFashion {
@@ -332,7 +353,6 @@
     display: grid;
     grid-template-columns: 5fr 1fr;
     column-gap: 15px;
-    margin-left: 10px;
     margin-top: 20px;
 }
 
@@ -346,12 +366,6 @@
     color: #FD7E14;
 }
 
-.product_itemFashion .fa-cart-shopping {
-    font-size: 20px;
-    /* Kích thước của icon */
-    color: white;
-    cursor: pointer;
-}
 
 .product_itemFashion .cart-hover {
     display: none;
@@ -415,10 +429,9 @@
     height: auto;
 }
 
-
 /* The Close Button */
 
-.closeFashion {
+ .closeFashion {
     position: absolute;
     color: #fdfafa;
     display: flex;
@@ -465,62 +478,63 @@ table {
     border: 1px solid #ccc;
 }
 
-#tbl tr {
+#tblFashion tr {
     height: 27px;
 }
 
-#tbl tr th {
+#tblFashion tr th {
     background: #f7f7f7;
 }
 
-#tbl tr th,
-#tbl tr td {
+#tblFashion tr th,
+#tblFashion tr td {
     text-align: center;
     border-bottom: 1px solid #ccc;
     font-weight: normal;
 }
 
-#tbl tr:last-child td {
+#tblFashion tr:last-child td {
     border: none;
-}
+} 
 
 
 /* Căn giữa cho tất cả các ô trừ cột Products */
 
-#tbl tr th,
-#tbl tr td:not(:first-child) {
+#tblFashion tr th,
+#tblFashion tr td:not(:first-child) {
     text-align: center;
 }
 
-#tbl tr th:not(:first-child),
-.thead-table tr th:not(:first-child) {
+#tblFashion tr th:not(:first-child),
+.thead-tableFashion tr th:not(:first-child) {
     border-left: 1px solid #ccc;
 }
 
 
 /* Căn trái cho cột Products */
 
-#tbl th:first-child,
-#tbl td:first-child,
-.thead-table th:first-child,
-.thead-table td:first-child {
+#tblFashion th:first-child,
+#tblFashion td:first-child,
+.thead-tableFashion th:first-child,
+.thead-tableFashion td:first-child {
     text-align: left;
     padding-left: 5px;
     border-left: none;
 }
 
-.thead-table th:nth-child(2),
-#tbl td:nth-child(2),
-.thead-table th:nth-child(3),
-#tbl td:nth-child(3),
-.thead-table th:nth-child(4),
-#tbl td:nth-child(4) {
+.thead-tableFashion th:nth-child(2),
+#tblFashion td:nth-child(2),
+.thead-tableFashion th:nth-child(3),
+#tblFashion td:nth-child(3),
+.thead-tableFashion th:nth-child(4),
+#tblFashion td:nth-child(4) {
     width: 20%;
     text-align: center;
 }
 
-.moldal-detail {
+.moldal-detail-Fashion {
     display: flex;
+    width: 280px;
     gap: 10px;
     padding: 10px;
 }
@@ -579,6 +593,7 @@ table {
     border-radius: 5px;
 }
 
+
 .btn-modalFashion-order:hover {
     background-color: #f87437c3;
 }
@@ -593,15 +608,13 @@ table {
 
 .minusQuantityFashion,
 .plusQuantityFashion {
-    width: 24px;
-    height: 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .mxFashion-2 {
     width: 24px;
-}
+} 
 
 
 /* End modal */

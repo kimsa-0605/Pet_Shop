@@ -92,7 +92,7 @@ function createCard(fetured_products, i) {
         demo += '<p><b>' + fetured_products[i].name + '</b></p>';
         demo += '<i class="fa-regular fa-heart" style="color: orange;"></i>';
         demo += '</div>';
-        demo += '<p class="price"><b>' + fetured_products[i].price + ' VNĐ</b></p>';
+        demo += '<p class="price">' + fetured_products[i].price + ' VNĐ</p>';
         demo += `</a>`;
         demo += `<button id="myBtn-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="cart-hover">`;
         demo += `<span id="myBtn-icon-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="fa-solid fa-cart-shopping"></span>`

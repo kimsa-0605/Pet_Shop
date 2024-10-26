@@ -136,14 +136,14 @@ function showFeaturedProductsFashion(featuredProductsFashion) {
             <div class="imgH"><img src="${item.image}" alt="Product"></div>
             <div class="detailH">
                 <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
-                    <p class="titleH">${item.name}</p>
+                    <p class="titleH"><b>${item.name}</b></p>
                     <p class="priceH">${item.price.toFixed(2)} VNĐ</p>
                 </a>
                 <div class="icon-products">
                     <i class="fa-regular fa-heart" style="color: orange;"></i>
                 </div>
                 <button id="featured-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
-                <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
+                <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})"></span>
             
             </div>
         `;
@@ -162,20 +162,20 @@ function showProductFashion(initialProductsFashion) {
         const newItem = document.createElement('div');
         newItem.classList.add('product_itemFashion');
         newItem.innerHTML = `
-    <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
-    <div class="detailH">
-        <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
-            <p class="titleH"><b>${item.name}</b></p>
-            <p class="price"><b>${item.price.toFixed(2)}  VNĐ</b></p>
-        </a>
-         <div class="icon-products">
-             <i class="fa-regular fa-heart" style="color: orange;"></i>
-         </div>
-         <button id="product-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
-         <span id="fashion-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
-         
-        </div>`;
-        //<button id="product-fashion" onclick="addToCartHomePage(${initialProductsFashion[i].id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>;
+            <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
+            <div class="detailH">
+                <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
+                    <p class="titleH"><b>${item.name}</b></p>
+                    <p class="priceH">${item.price.toFixed(3)}  VNĐ</p>
+                </a>
+                <div class="icon-products">
+                    <i class="fa-regular fa-heart" style="color: orange;"></i>
+                </div>
+                <button id="product-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
+                <span id="fashion-icon" onclick="addToCartHomePageFashion(${item.id})"></span>
+                
+                </div>`;
+
         listFashion.appendChild(newItem);
     });
 }
@@ -193,10 +193,23 @@ document.getElementById('applyFilterFashion').addEventListener('click', function
         const matchesSearchTerm = item.name.toLowerCase().includes(searchTerm);
         return isInCategory && isInPriceRange && matchesSearchTerm;
     });
-    //hiển thị sản phẩm đã lọc
-    showProductFashion(filteredProductsFashion);
-    console.log(filteredProductsFashion)
+
+    // Hiển thị sản phẩm đã lọc
+    const productList = document.getElementById("listFashion");
+    productList.innerHTML = ''; // Xóa danh sách sản phẩm trước khi thêm sản phẩm mới
+
+    if (filteredProductsFashion.length > 0) {
+        showProductFashion(filteredProductsFashion);
+        console.log(filteredProductsFashion);
+    } else {
+        const nonListP = document.createElement('div');
+        nonListP.classList.add('nonListP');
+        nonListP.innerHTML = `
+            <p class="nonresult"><i class="fa-solid fa-ban"></i><i>Product not found. Please check your search keywords or try again later!</i></p>`;
+        productList.appendChild(nonListP); // Thêm thông báo vào danh sách
+    }
 });
+
 
 // Hiện sản phẩm ban đầu
 showFeaturedProductsFashion(featuredProductsFashion);
@@ -255,25 +268,25 @@ if (userDataFashion) {
 let userDataFashionRender = userDataFashion.filter(value => value.userID == getUserIDFashion);
 
 function renderProductsToTableFashion(userDataFashionRender, i) {
-    console.log('Hello Viet Nam')
     const { image, name, quantity, price } = userDataFashionRender[i];
     return `
-        <tr class="produc_In_Cart">
-            <td class="moldal-detail">
+         <tr class="produc_In_Cart">
+            <td class="moldal-detail-Fashion">
                 <img class="moldal-detailFashion-img" src="${image}" alt="">
-                <div class="moldal-detailFashion-infor">
+                    <div class="moldal-detailFashion-infor">
                     <p class="modalFashion-product-name">${name}</p>
-                    <p id="remove-productFashion"  data-indexFashion="${i}" class="modalFashion-product-remove"><span class="icon-m-content fa-solid fa-xmark"></span> Remove product from cart</p>
+                        <p id="remove-productFashion"  data-indexFashion="${i}" class="modalFashion-product-remove"><span class="icon-m-content fa-solid fa-xmark"></span> Remove product from cart</p>
                 </div>
             </td>
             <td class="price-text">${price}</td>
-            <td>
+            <td class="buttonQuantity">
                 <button onclick="minusQuantityFashion(${i}, ${quantity})" class="minusQuantityFashion">-</button>
                 <span class="mxFashion-2">${quantity}</span>
                 <button onclick="plusQuantityFashion(${i})" class="plusQuantityFashion">+</button>
             </td>
             <td class="total-price">3000</td>
-        </tr>
+        </tr> 
+
     `;
 }
 
@@ -415,14 +428,15 @@ function dieu_huong(page) {
     } else if (page === 'Fashion') {
         location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
-    } else if (page === 'Cart') {
+    }else if (page === 'Cart') {
         location.assign("/pages/cartt.html");
     } else if (page === 'User') {
         location.assign("/pages/profile.html");
-    } else {
+    }
+    else {
         alert("Trang không tồn tại!");
     }
 }
