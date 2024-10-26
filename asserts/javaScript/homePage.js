@@ -327,6 +327,7 @@ function addToCartHomePage(id) {
         }
         localStorage.setItem("productInCart", JSON.stringify(userData));
     }
+    userDataRender = userData.filter(value => value.userID == getUserID);
     listCart();
     totalProduct();
     totalMoney();

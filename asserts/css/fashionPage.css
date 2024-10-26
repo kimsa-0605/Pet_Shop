@@ -66,6 +66,7 @@
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    object-fit: cover;
 }
 
 .box_itemFashion img {
@@ -73,6 +74,7 @@
     height: 416px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    object-fit: cover;
 }
 
 .box_itemFashion .detailH {

@@ -1,8 +1,8 @@
 const initialProductsFashion = [{
     id: 1,
     name: 'Luxury Cat Sweater',
-    price: 250000,
-    image: "/asserts/image/bestFashion2.webp",
+    price: "250.000",
+    image: "/asserts/image/luxuryCat.jpg",
     description: "A premium, stylish sweater made from soft, high-quality materials to keep your cat cozy and fashionable.",
     nature: {
         type: 'Cat Fashion'
@@ -10,8 +10,8 @@ const initialProductsFashion = [{
 }, {
     id: 2,
     name: 'Designer Dog Hoodie',
-    price: 299000,
-    image: "/asserts/image/bestFashion4.webp",
+    price: "299.000",
+    image: "/asserts/image/dogHoodie.jpg",
     description: "A trendy dog hoodie made with breathable fabric, perfect for walks or lounging in style.",
     nature: {
         type: 'Dog Fashion'
@@ -19,8 +19,8 @@ const initialProductsFashion = [{
 }, {
     id: 3,
     name: 'Elegant Dog Jacket',
-    price: 200000,
-    image: "/asserts/image/bestFashion1.webp",
+    price: "200.000",
+    image: "/asserts/image/dogJacket.avif",
     description: "A fashionable jacket for dogs, designed to offer warmth and style for outdoor adventures.",
     nature: {
         type: 'Dog Fashion'
@@ -28,8 +28,8 @@ const initialProductsFashion = [{
 }, {
     id: 4,
     name: 'Chic Cat Bowtie',
-    price: 250000,
-    image: "/asserts/image/bestFashion3.webp",
+    price: "250.000",
+    image: "/asserts/image/chicCatBowtie.jpg",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -37,8 +37,8 @@ const initialProductsFashion = [{
 }, {
     id: 5,
     name: 'Casual Cat Collar',
-    price: 350000,
-    image: "/asserts/image/bestFashion2.webp",
+    price: "350.000",
+    image: "/asserts/image/catcasual.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -46,8 +46,8 @@ const initialProductsFashion = [{
 }, {
     id: 6,
     name: 'Classic Cat Bandana',
-    price: 280000,
-    image: "/asserts/image/bestFashion4.webp",
+    price: "280.000",
+    image: "/asserts/image/classicCat.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -55,8 +55,8 @@ const initialProductsFashion = [{
 }, {
     id: 7,
     name: 'Floral Dog Scarf',
-    price: 150000,
-    image: "/asserts/image/bestFashion1.webp",
+    price: "150.000",
+    image: "/asserts/image/dogScarf.jpg",
     description: "A fresh, floral-patterned scarf for dogs, adding style to any outing or event.",
     nature: {
         type: 'Dog Fashion'
@@ -64,8 +64,8 @@ const initialProductsFashion = [{
 }, {
     id: 8,
     name: 'Bold Dog T-shirt',
-    price: 250000,
-    image: "/asserts/image/bestFashion4.webp",
+    price: "250.000",
+    image: "/asserts/image/dogTshirt.webp",
     description: "A bold and comfy t-shirt for dogs, designed with soft fabric for everyday wear.",
     nature: {
         type: 'Dog Fashion'
@@ -73,8 +73,8 @@ const initialProductsFashion = [{
 }, {
     id: 9,
     name: 'Sporty Dog Tank Top',
-    price: 199000,
-    image: "/asserts/image/bestFashion3.webp",
+    price: "199.000",
+    image: "/asserts/image/dogTankTop.jpg",
     description: "A sporty tank top for active dogs, perfect for hot weather and high-energy activities.",
     nature: {
         type: 'Dog Fashion'
@@ -84,8 +84,8 @@ const initialProductsFashion = [{
 const featuredProductsFashion = [{
     id: 4,
     name: 'Chic Cat Bowtie',
-    price: 150000,
-    image: "/asserts/image/bestFashion1.webp",
+    price: "150.000",
+    image: "/asserts/image/chicCatBowtie.jpg",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -93,8 +93,8 @@ const featuredProductsFashion = [{
 }, {
     id: 5,
     name: 'Casual Cat Collar',
-    price: 300000,
-    image: "/asserts/image/bestFashion2.webp",
+    price: "300.000",
+    image: "/asserts/image/catcasual.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -102,8 +102,8 @@ const featuredProductsFashion = [{
 }, {
     id: 6,
     name: 'Classic Cat Bandana',
-    price: 250000,
-    image: "/asserts/image/bestFashion3.webp",
+    price: "250.000",
+    image: "/asserts/image/classicCat.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -113,7 +113,7 @@ const featuredProductsFashion = [{
 
 // lưu sản phẩm vào local
 localStorage.setItem('initialProductsFashion', JSON.stringify(initialProductsFashion));
-localStorage.setItem('fashion', JSON.stringify(featuredProductsFashion));
+localStorage.setItem('featuredProductFashion', JSON.stringify(featuredProductsFashion));
 
 function getProductsFashion() {
     return JSON.parse(localStorage.getItem('initialProductsFashion')) || [];
@@ -137,7 +137,7 @@ function showFeaturedProductsFashion(featuredProductsFashion) {
             <div class="detailH">
                 <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
                     <p class="titleH"><b>${item.name}</b></p>
-                    <p class="priceH">${item.price.toFixed(2)} VNĐ</p>
+                    <p class="priceH">${item.price} VNĐ</p>
                 </a>
                 <div class="icon-products">
                     <i class="fa-regular fa-heart" style="color: orange;"></i>
@@ -166,7 +166,7 @@ function showProductFashion(initialProductsFashion) {
             <div class="detailH">
                 <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
                     <p class="titleH"><b>${item.name}</b></p>
-                    <p class="priceH">${item.price.toFixed(3)}  VNĐ</p>
+                    <p class="priceH">${item.price}  VNĐ</p>
                 </a>
                 <div class="icon-products">
                     <i class="fa-regular fa-heart" style="color: orange;"></i>
@@ -284,7 +284,7 @@ function renderProductsToTableFashion(userDataFashionRender, i) {
                 <span class="mxFashion-2">${quantity}</span>
                 <button onclick="plusQuantityFashion(${i})" class="plusQuantityFashion">+</button>
             </td>
-            <td class="total-price">3000</td>
+            <td class="total-price">${((quantity) * (price.replace(/\./g, ''))).toLocaleString()}</td>
         </tr> 
 
     `;
@@ -302,20 +302,20 @@ function listCartFashion() {
 listCartFashion();
 
 // Tính tổng số lượng sản phẩm có trong giỏ hàng
-// function totalProductFashion() {
-//     document.getElementById("totalFashion").innerHTML = userDataFashionRender.length;
-// }
-// totalProductFashion();
+function totalProductFashion() {
+    document.getElementById("totalFashion").innerHTML = userDataFashionRender.length;
+}
+totalProductFashion();
 
 // Tổng số tiền cho tất cả sản phẩm
 function totalMoneyFashion() {
     if (userDataFashionRender.length > 0) {
         let totalFashion = 0;
         for (let i = 0; i < userDataFashionRender.length; i++) {
-            totalFashion += userDataFashionRender[i].quantity * (3000)
+            totalFashion += userDataFashionRender[i].quantity * (userDataFashionRender[i].price.replace(/\./g, '')).toLocaleString()
         }
 
-        // document.getElementById("totalFashion-money").innerHTML = totalFashion.toLocaleString();
+        document.getElementById("totalFashion-money").innerHTML = totalFashion.toLocaleString();
     }
 }
 totalMoneyFashion();
@@ -345,7 +345,7 @@ function minusQuantityFashion(indexFashion, quantity) {
 
 
 // Thêm vào giỏ hàng 
-const feturedProducts = JSON.parse(localStorage.getItem('fashion')) || [];
+const feturedProducts = JSON.parse(localStorage.getItem('featuredProductFashion')) || [];
 const bestSelling = JSON.parse(localStorage.getItem('initialProductsFashion')) || [];
 const productTest = feturedProducts.concat(bestSelling);
 
@@ -381,8 +381,9 @@ function addToCartHomePageFashion(id) {
         }
         localStorage.setItem("productInCart", JSON.stringify(userDataFashion));
     }
+    userDataFashionRender = userDataFashion.filter(value => value.userID == getUserIDFashion);
     listCartFashion();
-    // totalProductFashion();
+    totalProductFashion();
     totalMoneyFashion();
     modalFashion.style.display = "block";
 }
