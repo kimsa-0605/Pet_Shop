@@ -24,13 +24,13 @@ function showCartItem() {
                 <tr>
                     <td class="product-name">
                         <img src="${value.image}" alt="${value.name}" />
-                        <span>${value.name}</span>
+                        <span class="productNameInCart">${value.name}</span>
                     </td>
                     <td>${formatPrice(value.price)} VNĐ</td>
                     <td>
-                        <button onclick="decreaseQuantity(${value.id})">-</button>
+                        <button class="buttonQuantity" onclick="decreaseQuantity(${value.id})">-</button>
                         ${value.quantity}
-                        <button onclick="increaseQuantity(${value.id})">+</button>
+                        <button class="buttonQuantity" onclick="increaseQuantity(${value.id})">+</button>
                     </td>
                     <td id="item-total-${value.id}">${formatPrice(itemTotal)} VNĐ</td>
                     <td>
@@ -137,3 +137,45 @@ function dieu_huong(page) {
         alert("Trang không tồn tại!");
     }
 }
+
+
+
+// // Lấy dữ liệu từ localStorage và chuyển đổi sang dạng đối tượng
+// const orders = JSON.parse(localStorage.getItem("orders")) || [];
+// console.log(orders)
+
+// // Lọc đơn hàng của người dùng hiện tại
+// const userOrders = orders.filter(order => order.userID ==userId);
+// console.log(userOrders)
+// // Xây dựng HTML cho toàn bộ đơn hàng của người dùng
+// let orderHTML = '<div class="orderPD-container">';
+
+// userOrders.forEach((order, index) => {
+//   orderHTML += `
+//     <p class="titleOrder">Order ${index + 1}:</p>
+//     <div class="orderProduct">
+//   `;
+  
+//   // Duyệt qua từng sản phẩm trong đơn hàng
+//   order.products.forEach(product => {
+//     orderHTML += `
+//       <div class="detailOrderProduct">
+//         <img src="${product.image}" alt="${product.name}">
+//         <p class="name-detail-OP">${product.name}</p>
+//         <p class="price-OP">${product.price}</p>
+//       </div>
+//     `;
+//   });
+
+//   // Thêm tổng tiền vào cuối mỗi đơn hàng
+//   orderHTML += `
+//       <p class="total-OP">Thành tiền: ${order.totalAmount}</p>
+//     </div>
+//   `;
+// });
+
+// // Đóng `div` lớn chứa toàn bộ đơn hàng
+// orderHTML += '</div>';
+
+// // Gắn toàn bộ HTML vào phần tử `orderContainer`
+// document.querySelector("#orderContainer .orderInfor").innerHTML = orderHTML;

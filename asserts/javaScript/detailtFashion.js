@@ -148,7 +148,7 @@ function buyNowFashion(productIdF) {
             ...productFashion,
             userID: userIDFashion
         };
-        localStorage.setItem('orderDetailsFashion', JSON.stringify(orderDetailsFashion));
+        localStorage.setItem('orderDetails', JSON.stringify(orderDetailsFashion));
 
         window.location.href = "/pages/cartt.html";
     } else {

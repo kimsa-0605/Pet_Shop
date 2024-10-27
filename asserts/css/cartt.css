@@ -428,6 +428,10 @@ h2.title-fetured{
     color: #555;
 }
 
+.buttonQuantity {
+    width: 40px;
+}
+
 .button-AB {
     display: inline-block;
     width: 200px;
@@ -870,18 +874,15 @@ table{
 color: black;
 }
 
-.cart-container {
-width: 1440px;
-height: 3004px;
-background-color: white;
-padding: 40px;
 
+.yourCartTitle, .yourOrderTitle {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
 }
-
-
 .cart-table {
 width: 100%;
-border-collapse: collapse;
 margin-bottom: 20px;
 }
 
@@ -913,9 +914,15 @@ font-size: 24px;
 width: 100px;
 }
 
+.product-name{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 40%;
+    border-collapse: collapse;
+}
 
 .product-name img {
-width: 80px; /* Kích thước của hình ảnh */
+width: 70px; /* Kích thước của hình ảnh */
 height: auto; /* Giữ tỷ lệ hình ảnh */
 margin-right: 10px; /* Khoảng cách giữa hình ảnh và tên sản phẩm */
 }
@@ -933,6 +940,10 @@ width: 100px; /* Kích thước hình ảnh trong bảng */
 font-size: 24px;
 }
 
+.productNameInCart {
+    margin-left: 20px;
+    text-align: left;
+}
 .cart-summary {
 display:grid;
 grid-template-columns: 70% 30%;
@@ -984,6 +995,14 @@ text-align: center;
 }
 
 
+.detailOrderProduct img {
+    width: 100px;
+    height: 50px;
+}
+
+.titleOrder {
+    margin-top: 30px;
+}
 /* end cart */
 
 

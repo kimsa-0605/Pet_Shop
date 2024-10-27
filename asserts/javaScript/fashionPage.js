@@ -38,7 +38,7 @@ const initialProductsFashion = [{
     id: 5,
     name: 'Casual Cat Collar',
     price: "350.000",
-    image: "/asserts/image/catcasual.webp",
+    image: "/asserts/image/casualCatCollar.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -47,7 +47,7 @@ const initialProductsFashion = [{
     id: 6,
     name: 'Classic Cat Bandana',
     price: "280.000",
-    image: "/asserts/image/classicCat.jpg",
+    image: "/asserts/image/classicCatBandana.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -94,7 +94,7 @@ const featuredProductsFashion = [{
     id: 5,
     name: 'Casual Cat Collar',
     price: "300.000",
-    image: "/asserts/image/catcasual.webp",
+    image: "/asserts/image/casualCatCollar.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -103,7 +103,7 @@ const featuredProductsFashion = [{
     id: 6,
     name: 'Classic Cat Bandana',
     price: "250.000",
-    image: "/asserts/image/classicCat.jpg",
+    image: "/asserts/image/classicCatBandana.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'

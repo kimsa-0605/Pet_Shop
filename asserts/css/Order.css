@@ -85,11 +85,11 @@ h1{
     color: #f88236;    
 }
 #icon2 i{
-    margin-left: 90px;
+    margin-left: 70px;
     color: #f88236;     
 }
 #icon3 i{
-    margin-left: 125px; 
+    margin-left: 120px; 
     color: #f88236; 
 }
 #thanhtoan label{
@@ -132,8 +132,9 @@ h1{
     padding-right: 10px;
 }
 .order-summary img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 .order-summary h2{
     font-size: 28px;
@@ -194,6 +195,7 @@ h1{
     cursor: pointer;
 }
 #sum{
+    display: flex;
     font-size: 24px;
     padding-top: 20px;
     border-top: 1px solid #a19e9e;
@@ -204,13 +206,18 @@ h1{
     color: #f88236;
     text-align: right;
 }
+
+#subtotal {
+    display: flex;
+}
 #subtotal span{
     margin-left: 200px;
     color: #f88236;
     text-align: right;
 }
 #content{
-    width: 100px;
+    width: 100%;
+    font-weight: bold;
     margin-left: 15px;
 }
 .price{
@@ -221,11 +228,13 @@ h1{
 #quantity{
     margin-top: 0px;
     margin-left: 15px;
+    font-size: 13px;
 }
 #box{
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 20px;
+    font-size: 13px;
 }
 
 #fee span{

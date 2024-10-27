@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web_Basic</title>
     <link rel="stylesheet" href="/asserts/css/homePage.css">
-    <link rel="stylesheet" href="/asserts/foodPage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="/asserts/css/foodPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/asserts/css/detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 </head>
 
 <body>
-    <div class="containerFood">
+    <div class="containerFd">
         <!-- Start header -->
-        <div class="app">
-            <div class="hero">
+        <div class="appOther">
+            <div class="heroOther">
                 <div class="head_1">
                     <div class="header_1-left">
                         <div class="header_1-left-telephone header_content">
@@ -34,6 +34,7 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <p>8592 Fairground St. Tallahassee, FL 32303</p>
                     </div>
+
                 </div>
                 <div class="head_2">
                     <div class="shop-logo">
@@ -42,10 +43,10 @@
                     </div>
                     <div class="menu">
                         <ul class="list-menu">
-                            <li>Home</li>
-                            <li>Fashion</li>
-                            <li>Food</li>
-                            <li>About Us</li>
+                            <li onclick="dieu_huong('Home')">Home</li>
+                            <li onclick="dieu_huong('Fashion')">Fashion</li>
+                            <li onclick="dieu_huong('Food')">Food</li>
+                            <li onclick="dieu_huong('AboutUs')">About Us</li>
                         </ul>
                     </div>
                     <div class="input-head">
@@ -53,19 +54,8 @@
                             <input type="text" placeholder="Search Products...">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <i class="fa-regular fa-user"></i>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                </div>
-                <div class="hero_content">
-                    <div class="hero_content-left">
-                        <h5>Pet Shop</h5>
-                        <h2>The friendly and caring small pet store
-                        </h2>
-                        <p>At et vehicula sodales est proin turpis pellentesque sinulla a aliquam amet rhoncus quisque eget sit</p>
-                    </div>
-                    <div class="hero_content-right">
-                        <img src="/asserts/image/dogHomepage.png" alt="">
+                        <i class="fa-regular fa-user" onclick="dieu_huong('User')"></i>
+                        <i class="fa-solid fa-cart-shopping" onclick="dieu_huong('Cart')"></i>
                     </div>
                 </div>
             </div>
@@ -73,38 +63,37 @@
         <!-- End header -->
 
         <!-- Start Body -->
-        <div class="fetured_products">
+        <div class="fetured_food">
             <h2 class="title-fetured">Featured Products</h2>
-            <div class="products_box" id="featuredProductsFoodBox">
+            <div class="food_box" id="featuredProductsFoodBox">
                 <!-- Featured products will be injected here -->
             </div>
         </div>
-
-        <div class="containerF">
-            <div class="filters">
+        <div class="containerFood">
+            <div class="filterF">
                 <h3>Filter by Categories</h3>
                 <ul>
                     <li><input class="check" type="checkbox" value="Cat Food">Cat Food</li>
                     <li><input class="check" type="checkbox" value="Dog Food">Dog Food</li>
                 </ul>
-                <div class="filters">
+                <div class="filterF">
                     <h3>Search</h3>
-                    <div class="searchF">
+                    <div class="searchFood">
                         <input type="text" id="searchInput" name="searchFood" placeholder="Search Products...">
                     </div>
                 </div>
-                <div class="filterPri">
+                <div class="filterPrice">
                     <h3>Filter by Price</h3>
-                    <div class="item">
+                    <div class="itemFood">
                         <label for="">Min Price:</label>
-                        <input class="priceF" type="number" name="minPrice">
+                        <input class="priceFa" type="number" name="minPrice">
                     </div>
-                    <div class="item">
+                    <div class="itemFood">
                         <label for="">Max Price:</label>
-                        <input class="priceF" type="number" name="maxPrice">
+                        <input class="priceFa" type="number" name="maxPrice">
                     </div>
-                    <div class="item submit">
-                        <button id="applyFilter">Apply</button>
+                    <div class="itemFood submit">
+                        <button id="applyFilterFood">Apply</button>
                     </div>
                 </div>
             </div>
@@ -112,24 +101,24 @@
             <div class="food">
                 <div class="top-bar">
                     <div class="headF">
-                        <p id="resultCount">Showing 0 results</p>
+                        <p id="resultCountFood">Showing 0 results</p>
                     </div>
                 </div>
-                <div class="productFood" id="listF"></div>
+                <div class="productFood" id="listFood"></div>
             </div>
         </div>
 
         <!-- End Body -->
 
-        <!-- Start modal -->
+         <!--Start modal -->
         <div id="myModalFood" class="modalFood">
-            <!-- Modal content -->
+            Modal content
             <div class="modalFood-content" id="modalContent">
                 <span class="closeFood">&times;</span>
                 <div id="m-content">
                     <p><span class="icon-m-contentFood fa-solid fa-check"></span> You have added product to the cart.</p>
                     <p class="mc-textFood"><span class="icon-m-content fa-solid fa-cart-shopping"></span> Your cart has (<span id="totalFood"></span> items)</p>
-                    <table class="thead-table">
+                    <table class="thead-tableFood">
                         <thead>
                             <tr>
                                 <th>Products</th>
@@ -139,17 +128,16 @@
                             </tr>
                         </thead>
                     </table>
-                    <div class="table-container">
-                        <table id="tbl">
-
-                            <tbody id="product-cart">
-
+                    <div class="table-containerFood ">
+                        <table id="tblFood">
+                            <tbody id="food-cart">
+                                
                             </tbody>
                         </table>
                     </div>
-                    <div id="text-total">
-                        <p class="tt-text">Nationwide delivery</p>
-                        <p id="tt-total">Total: <span id="total-money" style="color: #F87537;"></span></p>
+                    <div id="text-totalFood">
+                        <p class="tt-text ">Nationwide delivery</p>
+                        <p id="tt-totalFood">Total: <span id="totalFood-money" style="color: #F87537; "></span></p>
                     </div>
                     <div class="modalFood-button">
                         <button id="order" onclick="OrderFood()" class="btn-modalFood-order">Order</button>
@@ -157,22 +145,21 @@
                 </div>
             </div>
         </div>
-        <script src="/asserts/javaScript/foodPage.js"></script>
-
+        
         <!-- End modal -->
 
         <!-- Start footer -->
         <div class="footer">
-            <img class="dauchan" src="/asserts/image/dauchan.png" alt="">
-            <img class="tron" src="/asserts/image/nuatronfooter.png" alt="">
+            <img class="dauchan" src="/asserts/image/dauchan.png " alt=" ">
+            <img class="tron" src="/asserts/image/nuatronfooter.png " alt=" ">
             <div class="inforU">
                 <div class="infor">
                     <div class="subInfor">
-                        <img src="/asserts/image/Logo.png" class="logo">
-                        <p class="text">Sed viverra eget fames sit varius. <br> Pellentesque mattis libero viverra dictumst <br> ornaresed justo convallis vitae
+                        <img src="/asserts/image/Logo.png " class="logo ">
+                        <p class="text ">Sed viverra eget fames sit varius. <br> Pellentesque mattis libero viverra dictumst <br> ornaresed justo convallis vitae
                         </p>
                     </div>
-                    <div class="icon-contact">
+                    <div class="icon-contact ">
                         <i class="icon fa-brands fa-square-facebook"></i>
                         <i class="icon fa-brands fa-square-instagram"></i>
                         <i class="icon fa-brands fa-square-x-twitter"></i>
@@ -185,13 +172,13 @@
                     <li class="text">Gift</li>
                     <li class="text">Careers</li>
                 </ul>
-                <ul class="title"><b>Useful Links</b>
+                <ul class="title "><b>Useful Links</b>
                     <li class="text">New products</li>
                     <li class="text">Best sellers</li>
                     <li class="text">Discount</li>
                     <li class="text">F.A.Q</li>
                 </ul>
-                <ul class="title"><b>Customer Service</b>
+                <ul class="title "><b>Customer Service</b>
                     <li class="text">Contact Us</li>
                     <li class="text">Shipping</li>
                     <li class="text">Returns</li>
@@ -204,20 +191,19 @@
                     <p>rgarton@outlook.com</p>
                 </div>
             </div>
-            <div class="inforD">
-                <p class="text-inforD"> © Copyright Pet Shop 2024. Design by Figma. guru</p>
-                <div class="icon-pay">
-                    <i class="icon fa-brands fa-cc-visa"></i>
-                    <i class="icon fa-brands fa-cc-mastercard"></i>
-                    <i class="icon fa-brands fa-cc-paypal"></i>
+            <div class="inforD ">
+                <p class="text-inforD "> © Copyright Pet Shop 2024. Design by Figma. guru</p>
+                <div class="icon-pay ">
+                    <i class="icon fa-brands fa-cc-visa "></i>
+                    <i class="icon fa-brands fa-cc-mastercard "></i>
+                    <i class="icon fa-brands fa-cc-paypal "></i>
                 </div>
             </div>
         </div>
         <!-- End footer -->
     </div>
 
-    <script src="foodPage.js">
-    </script>
+    <script src="/asserts/javaScript/foodPage.js"></script>
 </body>
 
 </html>
