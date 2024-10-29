@@ -183,7 +183,7 @@ function updateProduct() {
             localStorage.setItem('initialProductsFashion', JSON.stringify(fashionProducts));
         }
         loadProducts(home_page);
-        // closeUpdateProductForm();
+        closeUpdateProductForm();
     };
 
     reader.readAsDataURL(image);
