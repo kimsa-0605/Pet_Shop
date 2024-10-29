@@ -92,7 +92,7 @@ function createCard(fetured_products, i) {
         demo += '<p><b>' + fetured_products[i].name + '</b></p>';
         demo += '<i class="fa-regular fa-heart" style="color: orange;"></i>';
         demo += '</div>';
-        demo += '<p class="price"><b>' + fetured_products[i].price + ' VNĐ</b></p>';
+        demo += '<p class="price">' + fetured_products[i].price + ' VNĐ</p>';
         demo += `</a>`;
         demo += `<button id="myBtn-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="cart-hover">`;
         demo += `<span id="myBtn-icon-fetured" onclick="addToCartHomePage(${fetured_products[i].id})" class="fa-solid fa-cart-shopping"></span>`
@@ -147,9 +147,9 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("/pages/detail.html");
+        location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
     }else if (page === 'Cart') {
@@ -327,6 +327,7 @@ function addToCartHomePage(id) {
         }
         localStorage.setItem("productInCart", JSON.stringify(userData));
     }
+    userDataRender = userData.filter(value => value.userID == getUserID);
     listCart();
     totalProduct();
     totalMoney();

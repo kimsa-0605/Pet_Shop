@@ -143,7 +143,9 @@ if (getDataUser) {
             getDataUser.gender = updatedUser.gender;
             getDataUser.birth = updatedUser.birth;
             getDataUser.image = updatedUser.image;
-            
+
+            viewProfileItem.classList.add("p-view");
+            updateProfileItem.classList.remove("p-view");
             displayAvatarInfor();
             displayViewProfile();
             alert('Profile information updated successfully.');
@@ -241,9 +243,9 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("/pages/detail.html");
+        location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
     }else if (page === 'Cart') {

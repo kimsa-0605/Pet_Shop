@@ -33,7 +33,7 @@ function displayProductDetail() {
                 <img src="${product.image}" id="image" alt="Products_img">
                 <div class="detailt">
                     <p class="title-p">${product.name}</p>
-                    <p class="price">${product.price} VNĐ</p>
+                    <p class="detail-price">${product.price} VNĐ</p>
 
                     <div class="quantity-container">
                         <button onclick="minusQuantityDetail()" class="decrease-btn">-</button>
@@ -159,9 +159,9 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("/pages/detail.html");
+        location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
     }else if (page === 'Cart') {

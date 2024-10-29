@@ -1,8 +1,8 @@
 const initialProductsFashion = [{
     id: 1,
     name: 'Luxury Cat Sweater',
-    price: 250000,
-    image: "/meo1.webp",
+    price: "250.000",
+    image: "/asserts/image/luxuryCat.jpg",
     description: "A premium, stylish sweater made from soft, high-quality materials to keep your cat cozy and fashionable.",
     nature: {
         type: 'Cat Fashion'
@@ -10,8 +10,8 @@ const initialProductsFashion = [{
 }, {
     id: 2,
     name: 'Designer Dog Hoodie',
-    price: 299000,
-    image: "/cho1.webp",
+    price: "299.000",
+    image: "/asserts/image/dogHoodie.jpg",
     description: "A trendy dog hoodie made with breathable fabric, perfect for walks or lounging in style.",
     nature: {
         type: 'Dog Fashion'
@@ -19,8 +19,8 @@ const initialProductsFashion = [{
 }, {
     id: 3,
     name: 'Elegant Dog Jacket',
-    price: 200000,
-    image: "/cho2.webp",
+    price: "200.000",
+    image: "/asserts/image/dogJacket.avif",
     description: "A fashionable jacket for dogs, designed to offer warmth and style for outdoor adventures.",
     nature: {
         type: 'Dog Fashion'
@@ -28,8 +28,8 @@ const initialProductsFashion = [{
 }, {
     id: 4,
     name: 'Chic Cat Bowtie',
-    price: 250000,
-    image: "/meo2.jpg",
+    price: "250.000",
+    image: "/asserts/image/chicCatBowtie.jpg",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -37,8 +37,8 @@ const initialProductsFashion = [{
 }, {
     id: 5,
     name: 'Casual Cat Collar',
-    price: 350000,
-    image: "/meo5.jpg",
+    price: "350.000",
+    image: "/asserts/image/casualCatCollar.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -46,8 +46,8 @@ const initialProductsFashion = [{
 }, {
     id: 6,
     name: 'Classic Cat Bandana',
-    price: 280000,
-    image: "/meo4.jpg",
+    price: "280.000",
+    image: "/asserts/image/classicCatBandana.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -55,8 +55,8 @@ const initialProductsFashion = [{
 }, {
     id: 7,
     name: 'Floral Dog Scarf',
-    price: 150000,
-    image: "/cho3.webp",
+    price: "150.000",
+    image: "/asserts/image/dogScarf.jpg",
     description: "A fresh, floral-patterned scarf for dogs, adding style to any outing or event.",
     nature: {
         type: 'Dog Fashion'
@@ -64,8 +64,8 @@ const initialProductsFashion = [{
 }, {
     id: 8,
     name: 'Bold Dog T-shirt',
-    price: 250000,
-    image: "/cho4.webp",
+    price: "250.000",
+    image: "/asserts/image/dogTshirt.webp",
     description: "A bold and comfy t-shirt for dogs, designed with soft fabric for everyday wear.",
     nature: {
         type: 'Dog Fashion'
@@ -73,8 +73,8 @@ const initialProductsFashion = [{
 }, {
     id: 9,
     name: 'Sporty Dog Tank Top',
-    price: 199000,
-    image: "/cho5.jpg",
+    price: "199.000",
+    image: "/asserts/image/dogTankTop.jpg",
     description: "A sporty tank top for active dogs, perfect for hot weather and high-energy activities.",
     nature: {
         type: 'Dog Fashion'
@@ -84,8 +84,8 @@ const initialProductsFashion = [{
 const featuredProductsFashion = [{
     id: 4,
     name: 'Chic Cat Bowtie',
-    price: 150000,
-    image: "/meo2.jpg",
+    price: "150.000",
+    image: "/asserts/image/chicCatBowtie.jpg",
     description: "A charming and chic bowtie for cats, perfect for special occasions or daily fashion statements.",
     nature: {
         type: 'Cat Fashion'
@@ -93,8 +93,8 @@ const featuredProductsFashion = [{
 }, {
     id: 5,
     name: 'Casual Cat Collar',
-    price: 300000,
-    image: "/meo5.jpg",
+    price: "300.000",
+    image: "/asserts/image/casualCatCollar.webp",
     description: "A stylish and durable collar for cats, offering both comfort and a touch of flair.",
     nature: {
         type: 'Cat Fashion'
@@ -102,8 +102,8 @@ const featuredProductsFashion = [{
 }, {
     id: 6,
     name: 'Classic Cat Bandana',
-    price: 250000,
-    image: "/meo4.jpg",
+    price: "250.000",
+    image: "/asserts/image/classicCatBandana.jpg",
     description: "A fashionable, lightweight bandana for cats that adds a touch of personality to their wardrobe.",
     nature: {
         type: 'Cat Fashion'
@@ -120,7 +120,7 @@ function getProductsFashion() {
 }
 
 function getFeaturedProductsFashion() {
-    return JSON.parse(localStorage.getItem('featuredProductsFashion ')) || [];
+    return JSON.parse(localStorage.getItem('featuredProductsFashion')) || [];
 }
 
 function showFeaturedProductsFashion(featuredProductsFashion) {
@@ -133,20 +133,20 @@ function showFeaturedProductsFashion(featuredProductsFashion) {
         const newItem = document.createElement('div');
         newItem.classList.add('box_itemFashion');
         newItem.innerHTML = `
-    <div class="imgH"><img src="${item.image}" alt="Product"></div>
-    <div class="detailH">
-        <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
-            <p class="titleH"><b>${item.name}</p>
-            <p class="priceH"><b>${item.price.toFixed(2)} VNĐ</p>
-        </a>
-         <div class="icon-products">
-             <i class="fa-regular fa-heart" style="color: orange;"></i>
-         </div>
-         <button id="featured-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
-         <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
-       
-    </div>
-`;
+            <div class="imgH"><img src="${item.image}" alt="Product"></div>
+            <div class="detailH">
+                <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
+                    <p class="titleH"><b>${item.name}</b></p>
+                    <p class="priceH">${item.price} VNĐ</p>
+                </a>
+                <div class="icon-products">
+                    <i class="fa-regular fa-heart" style="color: orange;"></i>
+                </div>
+                <button id="featured-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
+                <span id="featured-icon" onclick="addToCartHomePageFashion(${item.id})"></span>
+            
+            </div>
+        `;
         // <button id="featured-fashion" onclick="addToCartHomePage(${featuredProductsFashion[i].id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
         featuredProductsFashionBox.appendChild(newItem);
     });
@@ -162,41 +162,54 @@ function showProductFashion(initialProductsFashion) {
         const newItem = document.createElement('div');
         newItem.classList.add('product_itemFashion');
         newItem.innerHTML = `
-    <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
-    <div class="detailH">
-        <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
-            <p class="titleH"><b>${item.name}</b></p>
-            <p class="price"><b>${item.price.toFixed(2)}  VNĐ</b></p>
-        </a>
-         <div class="icon-products">
-             <i class="fa-regular fa-heart" style="color: orange;"></i>
-         </div>
-         <button id="product-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
-         <span id="fashion-icon" onclick="addToCartHomePageFashion(${item.id})" class="fa-solid fa-cart-shopping"></span>
-         
-        </div>`;
-        //<button id="product-fashion" onclick="addToCartHomePage(${initialProductsFashion[i].id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>;
+            <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
+            <div class="detailH">
+                <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
+                    <p class="titleH"><b>${item.name}</b></p>
+                    <p class="priceH">${item.price}  VNĐ</p>
+                </a>
+                <div class="icon-products">
+                    <i class="fa-regular fa-heart" style="color: orange;"></i>
+                </div>
+                <button id="product-fashion" onclick="addToCartHomePageFashion(${item.id})" class="cart-hover"><span class="fa-solid fa-cart-shopping"></span></button>
+                <span id="fashion-icon" onclick="addToCartHomePageFashion(${item.id})"></span>
+                
+                </div>`;
+
         listFashion.appendChild(newItem);
     });
 }
 
 // LỌC SẢN PHẨM
 document.getElementById('applyFilterFashion').addEventListener('click', function() {
-    const categoryFilters = Array.from(document.querySelectorAll('.filters input[type="checkbox"]:checked')).map(cb => cb.value);
+    const categoryFilters = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
     const minPrice = parseFloat(document.querySelector('input[name="minPrice"]').value) || 0;
     const maxPrice = parseFloat(document.querySelector('input[name="maxPrice"]').value) || Infinity;
     const searchTerm = document.querySelector('input[name="searchFashion"]').value.toLowerCase();
 
     const filteredProductsFashion = initialProductsFashion.filter(item => {
         const isInCategory = categoryFilters.length ? categoryFilters.includes(item.nature.type) : true;
-        const isInPriceRange = item.price >= minPrice && item.price <= maxPrice;
+        const isInPriceRange = parseFloat(item.price) >= minPrice && parseFloat(item.price) <= maxPrice;
         const matchesSearchTerm = item.name.toLowerCase().includes(searchTerm);
         return isInCategory && isInPriceRange && matchesSearchTerm;
     });
-    //hiển thị sản phẩm đã lọc
-    showProductFashion(filteredProductsFashion);
-    console.log(filteredProductsFashion)
+
+    // Hiển thị sản phẩm đã lọc
+    const productList = document.getElementById("listFashion");
+    productList.innerHTML = ''; // Xóa danh sách sản phẩm trước khi thêm sản phẩm mới
+
+    if (filteredProductsFashion.length > 0) {
+        showProductFashion(filteredProductsFashion);
+        console.log(filteredProductsFashion);
+    } else {
+        const nonListP = document.createElement('div');
+        nonListP.classList.add('nonListP');
+        nonListP.innerHTML = `
+            <p class="nonresult"><i class="fa-solid fa-ban"></i><i>Product not found. Please check your search keywords or try again later!</i></p>`;
+        productList.appendChild(nonListP); // Thêm thông báo vào danh sách
+    }
 });
+
 
 // Hiện sản phẩm ban đầu
 showFeaturedProductsFashion(featuredProductsFashion);
@@ -257,22 +270,23 @@ let userDataFashionRender = userDataFashion.filter(value => value.userID == getU
 function renderProductsToTableFashion(userDataFashionRender, i) {
     const { image, name, quantity, price } = userDataFashionRender[i];
     return `
-        <tr class="produc_In_Cart">
-            <td class="moldal-detail">
+         <tr class="produc_In_Cart">
+            <td class="moldal-detail-Fashion">
                 <img class="moldal-detailFashion-img" src="${image}" alt="">
-                <div class="moldal-detailFashion-infor">
+                    <div class="moldal-detailFashion-infor">
                     <p class="modalFashion-product-name">${name}</p>
-                    <p id="remove-productFashion"  data-indexFashion="${i}" class="modalFashion-product-remove"><span class="icon-m-content fa-solid fa-xmark"></span> Remove product from cart</p>
+                        <p id="remove-productFashion"  data-indexFashion="${i}" class="modalFashion-product-remove"><span class="icon-m-content fa-solid fa-xmark"></span> Remove product from cart</p>
                 </div>
             </td>
             <td class="price-text">${price}</td>
-            <td>
+            <td class="buttonQuantity">
                 <button onclick="minusQuantityFashion(${i}, ${quantity})" class="minusQuantityFashion">-</button>
                 <span class="mxFashion-2">${quantity}</span>
                 <button onclick="plusQuantityFashion(${i})" class="plusQuantityFashion">+</button>
             </td>
             <td class="total-price">${((quantity) * (price.replace(/\./g, ''))).toLocaleString()}</td>
-        </tr>
+        </tr> 
+
     `;
 }
 
@@ -331,19 +345,24 @@ function minusQuantityFashion(indexFashion, quantity) {
 
 
 // Thêm vào giỏ hàng 
-const feturedProducts = JSON.parse(localStorage.getItem('featuredProductsFashion')) || [];
+const feturedProducts = JSON.parse(localStorage.getItem('featuredProductFashion')) || [];
 const bestSelling = JSON.parse(localStorage.getItem('initialProductsFashion')) || [];
-product_itemFashion = feturedProducts.concat(bestSelling);
+const productTest = feturedProducts.concat(bestSelling);
+
+
 
 // Thêm sản phẩm vào giỏ hàng cho user id
 function addToCartHomePageFashion(id) {
+    console.log(productTest)
+    console.log('\hello')
     console.log(id);
     let checkProductInCart = userDataFashion.some(value => value.id == id && value.userID == getUserIDFashion);
     console.log(checkProductInCart);
     // Kiểm tra xem đã có đơn hàng chưa
     if (!checkProductInCart) {
+        console.log(feturedProducts)
         // Tạo mới đơn hàng và lưu cho user id
-        let pInProduct = product_itemFashion.find(value => value.id === id);
+        let pInProduct = productTest.find(value => value.id === id);
         console.log(pInProduct);
         userDataFashion.unshift({
             ...pInProduct,
@@ -362,6 +381,7 @@ function addToCartHomePageFashion(id) {
         }
         localStorage.setItem("productInCart", JSON.stringify(userDataFashion));
     }
+    userDataFashionRender = userDataFashion.filter(value => value.userID == getUserIDFashion);
     listCartFashion();
     totalProductFashion();
     totalMoneyFashion();
@@ -396,7 +416,7 @@ document.getElementById("fashion-cart").addEventListener('click', function(event
 // Lưu vào local storage sản phẩm muốn mua và chuyển sang trang order khi nhấn nút order
 function OrderFashion() {
     if (userDataFashionRender.length > 0) {
-        localStorage.setItem('orderDetailsFashion', JSON.stringify(userDataFashionRender));
+        localStorage.setItem('orderDetails', JSON.stringify(userDataFashionRender));
         window.location.href = "/pages/Order.html";
     } else {
         alert("Giỏ hàng của bạn trống!");
@@ -407,16 +427,17 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("/pages/detail.html");
+        location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
-    } else if (page === 'Cart') {
+    }else if (page === 'Cart') {
         location.assign("/pages/cartt.html");
     } else if (page === 'User') {
         location.assign("/pages/profile.html");
-    } else {
+    }
+    else {
         alert("Trang không tồn tại!");
     }
 }

@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web_Basic</title>
-    <link rel="stylesheet" href="/Pet_Shop/asserts/css/homePage.css">
-    <link rel="stylesheet" href="/Pet_Shop/asserts/css/fashionPage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/Pet_Shop/asserts/css/detail.css">
+    <link rel="stylesheet" href="/asserts/css/homePage.css">
+    <link rel="stylesheet" href="/asserts/css/fashionPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/asserts/css/detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 </head>
 
 <body>
-    <div class="containerFashion">
+    <div class="containerFSh">
         <!-- Start header -->
         <div class="appOther">
             <div class="heroOther">
@@ -36,7 +35,7 @@
                         <p>8592 Fairground St. Tallahassee, FL 32303</p>
                     </div>
 
-
+                    
                 </div>
                 <div class="head_2">
                     <div class="shop-logo">
@@ -45,7 +44,7 @@
                     </div>
                     <div class="menu">
                         <ul class="list-menu">
-                            <li onclick="dieu_huong('Home')">Home</li>
+                            <li onclick="dieu_huong('Home')" >Home</li>
                             <li onclick="dieu_huong('Fashion')">Fashion</li>
                             <li onclick="dieu_huong('Food')">Food</li>
                             <li onclick="dieu_huong('AboutUs')">About Us</li>
@@ -112,15 +111,15 @@
 
         <!-- End Body -->
 
-        <!-- Start modal -->
+         <!--Start modal -->
         <div id="myModalFashion" class="modalFashion">
-            <!-- Modal content -->
+            Modal content
             <div class="modalFashion-content" id="modalContent">
                 <span class="closeFashion">&times;</span>
-                <div id="m-content ">
+                <div id="m-content">
                     <p><span class="icon-m-contentFashion fa-solid fa-check"></span> You have added product to the cart.</p>
-                    <p class="mc-textFashion "><span class="icon-m-content fa-solid fa-cart-shopping "></span> Your cart has (<span id="totalFashion "></span> items)</p>
-                    <table class="thead-tableFashion ">
+                    <p class="mc-textFashion"><span class="icon-m-content fa-solid fa-cart-shopping"></span> Your cart has (<span id="totalFashion"></span> items)</p>
+                    <table class="thead-tableFashion">
                         <thead>
                             <tr>
                                 <th>Products</th>
@@ -131,67 +130,65 @@
                         </thead>
                     </table>
                     <div class="table-containerFashion ">
-                        <table id="tbl ">
-
-                            <tbody id="fashion-cart ">
-
+                        <table id="tblFashion">
+                            <tbody id="fashion-cart">
+                                
                             </tbody>
                         </table>
                     </div>
-                    <div id="text-totalFashon ">
+                    <div id="text-totalFashon">
                         <p class="tt-text ">Nationwide delivery</p>
-                        <p id="tt-totalFashion ">Total: <span id="totalFashion-money " style="color: #F87537; "></span></p>
+                        <p id="tt-totalFashion">Total: <span id="totalFashion-money" style="color: #F87537; "></span></p>
                     </div>
-                    <div class="modalFashion-button ">
-                        <button id="order" onclick="OrderFashion() " class="btn-modalFashion-order ">Order</button>
+                    <div class="modalFashion-button">
+                        <button id="order" onclick="OrderFashion()" class="btn-modalFashion-order">Order</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
+        
         <!-- End modal -->
 
         <!-- Start footer -->
-        <div class="footer ">
-            <img class="dauchan " src="/asserts/image/dauchan.png " alt=" ">
-            <img class="tron " src="/asserts/image/nuatronfooter.png " alt=" ">
-            <div class="inforU ">
-                <div class="infor ">
-                    <div class="subInfor ">
+        <div class="footer">
+            <img class="dauchan" src="/asserts/image/dauchan.png " alt=" ">
+            <img class="tron" src="/asserts/image/nuatronfooter.png " alt=" ">
+            <div class="inforU">
+                <div class="infor">
+                    <div class="subInfor">
                         <img src="/asserts/image/Logo.png " class="logo ">
                         <p class="text ">Sed viverra eget fames sit varius. <br> Pellentesque mattis libero viverra dictumst <br> ornaresed justo convallis vitae
                         </p>
                     </div>
                     <div class="icon-contact ">
-                        <i class="icon fa-brands fa-square-facebook "></i>
-                        <i class="icon fa-brands fa-square-instagram "></i>
-                        <i class="icon fa-brands fa-square-x-twitter "></i>
-                        <i class="icon fa-brands fa-square-youtube "></i>
+                        <i class="icon fa-brands fa-square-facebook"></i>
+                        <i class="icon fa-brands fa-square-instagram"></i>
+                        <i class="icon fa-brands fa-square-x-twitter"></i>
+                        <i class="icon fa-brands fa-square-youtube"></i>
                     </div>
                 </div>
-                <ul class="title "><b>Company</b>
-                    <li class="text ">About Us</li>
-                    <li class="text ">Blog</li>
-                    <li class="text ">Gift</li>
-                    <li class="text ">Careers</li>
+                <ul class="title"><b>Company</b>
+                    <li class="text">About Us</li>
+                    <li class="text">Blog</li>
+                    <li class="text">Gift</li>
+                    <li class="text">Careers</li>
                 </ul>
                 <ul class="title "><b>Useful Links</b>
-                    <li class="text ">New products</li>
-                    <li class="text ">Best sellers</li>
-                    <li class="text ">Discount</li>
-                    <li class="text ">F.A.Q</li>
+                    <li class="text">New products</li>
+                    <li class="text">Best sellers</li>
+                    <li class="text">Discount</li>
+                    <li class="text">F.A.Q</li>
                 </ul>
                 <ul class="title "><b>Customer Service</b>
-                    <li class="text ">Contact Us</li>
-                    <li class="text ">Shipping</li>
-                    <li class="text ">Returns</li>
-                    <li class="text ">Order tracking</li>
+                    <li class="text">Contact Us</li>
+                    <li class="text">Shipping</li>
+                    <li class="text">Returns</li>
+                    <li class="text">Order tracking</li>
                 </ul>
-                <div class="store "><b>Store</b>
-                    <p class="br ">8592 Fairground St.</p>
+                <div class="store"><b>Store</b>
+                    <p class="br">8592 Fairground St.</p>
                     <p>Tallahassee, FL 32303</p>
-                    <p class="br ">+775 378-6348</p>
+                    <p class="br">+775 378-6348</p>
                     <p>rgarton@outlook.com</p>
                 </div>
             </div>
@@ -207,7 +204,7 @@
         <!-- End footer -->
     </div>
 
-    <script src="/Pet_Shop/asserts/javaScript/fashionPage.js">
+    <script src="/asserts/javaScript/fashionPage.js">
     </script>
 </body>
 

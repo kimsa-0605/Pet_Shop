@@ -24,13 +24,13 @@ function showCartItem() {
                 <tr>
                     <td class="product-name">
                         <img src="${value.image}" alt="${value.name}" />
-                        <span>${value.name}</span>
+                        <span class="productNameInCart">${value.name}</span>
                     </td>
                     <td>${formatPrice(value.price)} VNĐ</td>
                     <td>
-                        <button onclick="decreaseQuantity(${value.id})">-</button>
+                        <button class="buttonQuantity" onclick="decreaseQuantity(${value.id})">-</button>
                         ${value.quantity}
-                        <button onclick="increaseQuantity(${value.id})">+</button>
+                        <button class="buttonQuantity" onclick="increaseQuantity(${value.id})">+</button>
                     </td>
                     <td id="item-total-${value.id}">${formatPrice(itemTotal)} VNĐ</td>
                     <td>
@@ -123,9 +123,9 @@ function dieu_huong(page) {
     if (page === 'AboutUs') {
         location.assign("/pages/About.html");
     } else if (page === 'Fashion') {
-        location.assign("/pages/detail.html");
+        location.assign("/pages/fashionPage.html");
     } else if (page === 'Food') {
-        location.assign("/pages/boloc.html");
+        location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
         location.assign("/pages/homePage.html");
     }else if (page === 'Cart') {
@@ -137,3 +137,5 @@ function dieu_huong(page) {
         alert("Trang không tồn tại!");
     }
 }
+
+
