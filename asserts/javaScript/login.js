@@ -103,7 +103,7 @@ loginForm.addEventListener('submit', (event) => {
 
     // Kiểm tra người dùng có phải admin không
     if (email === Admin.email && password === Admin.password) {
-        window.location.href = '../../pages/homePage.html';
+        window.location.href = '../../pages/Admin.html';
         return;
     }
 
