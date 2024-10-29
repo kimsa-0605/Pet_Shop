@@ -161,7 +161,7 @@ function showProductFood(initialProductsFood) {
         newItem.innerHTML = `
             <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
             <div class="detailH">
-                <a href="detailtFood.html?code=${item.id}" class="text no-underline">
+                <a href="detailtFood.html?code=${item.id}" class="text-no-underline">
                     <p class="titleH"><b>${item.name}</b></p>
                     <p class="priceH">${item.price} VNĐ</p>
                 </a>
@@ -176,7 +176,7 @@ function showProductFood(initialProductsFood) {
 }
 
 document.getElementById('applyFilterFood').addEventListener('click', function() {
-    const categoryFilters = Array.from(document.querySelectorAll('.filters input[type="checkbox"]:checked')).map(cb => cb.value);
+    const categoryFilters = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
     const minPrice = parseFloat(document.querySelector('input[name="minPrice"]').value) || 0;
     const maxPrice = parseFloat(document.querySelector('input[name="maxPrice"]').value) || Infinity;
     const searchTerm = document.querySelector('input[name="searchFood"]').value.toLowerCase();

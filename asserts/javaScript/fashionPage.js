@@ -113,14 +113,14 @@ const featuredProductsFashion = [{
 
 // lưu sản phẩm vào local
 localStorage.setItem('initialProductsFashion', JSON.stringify(initialProductsFashion));
-localStorage.setItem('featuredProductFashion', JSON.stringify(featuredProductsFashion));
+localStorage.setItem('featuredProductsFashion', JSON.stringify(featuredProductsFashion));
 
 function getProductsFashion() {
     return JSON.parse(localStorage.getItem('initialProductsFashion')) || [];
 }
 
 function getFeaturedProductsFashion() {
-    return JSON.parse(localStorage.getItem('featuredProductsFashion ')) || [];
+    return JSON.parse(localStorage.getItem('featuredProductsFashion')) || [];
 }
 
 function showFeaturedProductsFashion(featuredProductsFashion) {
@@ -164,7 +164,7 @@ function showProductFashion(initialProductsFashion) {
         newItem.innerHTML = `
             <div class="imgH"><img src="${item.image}" alt="Products_img"></div>
             <div class="detailH">
-                <a href="detailtFashion.html?code=${item.id}" class="text no-underline"">
+                <a href="detailtFashion.html?code=${item.id}" class="text-no-underline">
                     <p class="titleH"><b>${item.name}</b></p>
                     <p class="priceH">${item.price}  VNĐ</p>
                 </a>
@@ -182,14 +182,14 @@ function showProductFashion(initialProductsFashion) {
 
 // LỌC SẢN PHẨM
 document.getElementById('applyFilterFashion').addEventListener('click', function() {
-    const categoryFilters = Array.from(document.querySelectorAll('.filters input[type="checkbox"]:checked')).map(cb => cb.value);
+    const categoryFilters = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
     const minPrice = parseFloat(document.querySelector('input[name="minPrice"]').value) || 0;
     const maxPrice = parseFloat(document.querySelector('input[name="maxPrice"]').value) || Infinity;
     const searchTerm = document.querySelector('input[name="searchFashion"]').value.toLowerCase();
 
     const filteredProductsFashion = initialProductsFashion.filter(item => {
         const isInCategory = categoryFilters.length ? categoryFilters.includes(item.nature.type) : true;
-        const isInPriceRange = item.price >= minPrice && item.price <= maxPrice;
+        const isInPriceRange = parseFloat(item.price) >= minPrice && parseFloat(item.price) <= maxPrice;
         const matchesSearchTerm = item.name.toLowerCase().includes(searchTerm);
         return isInCategory && isInPriceRange && matchesSearchTerm;
     });

@@ -150,7 +150,7 @@ function buyNowFashion(productIdF) {
         };
         localStorage.setItem('orderDetails', JSON.stringify(orderDetailsFashion));
 
-        window.location.href = "/pages/cartt.html";
+        window.location.href = "/pages/Order.html";
     } else {
         console.error('The product does not exist.');
     }

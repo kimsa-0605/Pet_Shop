@@ -1,8 +1,9 @@
 
 let home_page = 'food';
-let foodProducts = JSON.parse(localStorage.getItem('initialProducts')) || [];
-let fashionProducts = JSON.parse(localStorage.getItem('fashionProducts')) || [];
+let foodProducts = JSON.parse(localStorage.getItem('initialProductsFood')) || [];
+let fashionProducts = JSON.parse(localStorage.getItem('initialProductsFashion')) || [];
 let updateProductIndex;
+
 
 function setCategory(category) {
     home_page = category;
@@ -129,10 +130,10 @@ function addProduct() {
         };
         if (home_page === 'food') {
             foodProducts.push(product);
-            localStorage.setItem('initialProducts', JSON.stringify(foodProducts));
+            localStorage.setItem('initialProductsFood', JSON.stringify(foodProducts));
         } else {
             fashionProducts.push(product);
-            localStorage.setItem('fashionProducts', JSON.stringify(fashionProducts));
+            localStorage.setItem('initialProductsFashion', JSON.stringify(fashionProducts));
         }
         loadProducts(home_page);
         closeAddProductForm();
@@ -176,10 +177,10 @@ function updateProduct() {
         };
         if (home_page === 'food') {
             foodProducts[updateProductIndex] = product;
-            localStorage.setItem('initialProducts', JSON.stringify(foodProducts)); // Cập nhật đúng tên key
+            localStorage.setItem('initialProductsFood', JSON.stringify(foodProducts)); // Cập nhật đúng tên key
         } else {
             fashionProducts[updateProductIndex] = product;
-            localStorage.setItem('fashionProducts', JSON.stringify(fashionProducts));
+            localStorage.setItem('initialProductsFashion', JSON.stringify(fashionProducts));
         }
         loadProducts(home_page);
         // closeUpdateProductForm();
@@ -219,7 +220,7 @@ function deleteProduct(index) {
     if (confirmed) {
         const products = home_page === 'food' ? foodProducts : fashionProducts;
         products.splice(index, 1);
-        localStorage.setItem(home_page === 'food' ? 'initialProducts' : 'fashionProducts', JSON.stringify(products));
+        localStorage.setItem(home_page === 'food' ? 'initialProductsFood' : 'initialProductsFashion', JSON.stringify(products));
         loadProducts(home_page);
         alert('Product deleted successfully!');
     }
@@ -239,7 +240,7 @@ function loadProducts(category) {
             <td>${product.id}</td>
             <td>${product.name}</td>
             <td><img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px;"></td>
-            <td>${parseFloat(product.price).toFixed(2)} $</td>
+            <td>${parseFloat(product.price).toFixed(3)} VNĐ</td>
             <td>
                 
                  <button class="update" onclick="showUpdateProductForm(${index})"><i class="fa-solid fa-wrench"></i></button>
@@ -248,6 +249,8 @@ function loadProducts(category) {
         tbody.appendChild(row);
     });
 }
+
+
 
 /*************HANH********* */
 

@@ -355,6 +355,7 @@
     grid-template-columns: 5fr 1fr;
     column-gap: 15px;
     margin-top: 20px;
+    margin-left: 10px;
 }
 
 .product_itemFood .detailH .icon-products {
