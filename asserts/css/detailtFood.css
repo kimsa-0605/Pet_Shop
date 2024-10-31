@@ -1,0 +1,156 @@
+.container-detailFood {
+    background-color: rgba(189, 189, 189, 0.164);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-detail-Food {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#detail-Food {
+    background-color: white;
+    width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#detail-Food .detail-food {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 40px;
+    margin-top: 20px;
+}
+
+#detail-Food>.detail-food #image {
+    margin-left: 20px;
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+}
+
+p.priceFood {
+    padding: 0px;
+}
+
+#detail-Food p.title-f {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+p.quantityF {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+p.priceFood {
+    font-size: 35px;
+    color: orange;
+    margin-top: 15px;
+}
+
+.quantityFood-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 120px;
+    margin-top: 20px;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+}
+
+.decrease-btn {
+    background-color: white;
+    border-right: 1px solid #ccc;
+}
+
+.increase-btn {
+    background-color: white;
+    border-left: 1px solid #ccc;
+}
+
+#quantityF-display {
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-detailFood {
+    display: flex;
+    gap: 10px;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.cartFood,
+.buyFood {
+    width: 120px;
+    height: 40px;
+    color: white;
+    background-color: orange;
+    border: orange;
+}
+
+.cartFood {
+    background-color: rgba(255, 166, 0, 0.511);
+    border: 1px solid orange;
+}
+
+.shareFood {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.shareFood i {
+    font-size: 30px;
+}
+
+.shareFood p {
+    font-size: 16px;
+}
+
+.produc-inforFood {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+
+.produc-inforFood .title-inforF {
+    color: orange;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.produc-inforFood .p-inforF {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.produc-inforFood .title-inforF {
+    font-weight: bold;
+    font-size: 20px;
+}

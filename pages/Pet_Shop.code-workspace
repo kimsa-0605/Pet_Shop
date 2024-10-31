@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../FoodPage-Dieu"
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "Pet_Shop"
+    }
+}

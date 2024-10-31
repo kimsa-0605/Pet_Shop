@@ -1,0 +1,753 @@
+* {
+    /* box-sizing: border-box; */
+    padding: 0;
+    margin: 0;
+}
+
+.containerFd {
+    border: 10px black;
+    transition: transform 0.3s;
+    width: 1440px;
+    height: auto;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+
+
+/* Start featured product */
+
+.fetured_food {
+    margin: auto;
+    /* Căn giữa */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    margin-bottom: 85px;
+}
+
+.fetured_food .title-featured {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.text {
+    margin: 0 20px;
+    font-size: 15px;
+}
+
+.text .icon_food p {
+    margin-bottom: 12px;
+}
+
+.food_box {
+    max-width: 120px;
+    /* Thay đổi thành max-width để căn giữa */
+    height: auto;
+    /* Thay đổi thành auto để phù hợp với nội dung */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    justify-content: center;
+    /* Căn giữa các item trong grid */
+    margin: auto;
+    /* Căn giữa trong không gian cha */
+}
+
+.box_itemFood {
+    width: 380px;
+    height: 508px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+.box_itemFood img {
+    width: 100%;
+    height: 416px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.box_itemFood .detailH {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.box_itemFood .detailH .icon-products i {
+    text-align: right;
+    display: grid;
+    margin-right: 15px;
+}
+
+.box_itemFood .icon-products.fa-heart {
+    color: #FD7E14;
+}
+
+.box_itemFood:hover {
+    transform: scale(1.05);
+}
+
+
+/* Đặt icon giỏ hàng ẩn ban đầu */
+
+.box_itemFood .fa-cart-shopping, .product_itemFood .fa-cart-shopping {
+    font-size: 20px;
+    /* Kích thước của icon */
+    color: white;
+    cursor: pointer;
+}
+
+.box_itemFood {
+    position: relative;
+    /* Đặt relative để vị trí tuyệt đối của nút giỏ hàng được tính theo box_item */
+}
+
+.box_itemFood a {
+    text-decoration: none;
+    color: black;
+    /* Loại bỏ gạch chân */
+}
+
+.text-no-underline {
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+}
+
+.box_itemFood .cart-hover {
+    display: none;
+    /* Ban đầu ẩn */
+    position: absolute;
+    /* Dùng absolute để căn giữa */
+    width: 50px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Dịch chuyển nút về đúng tâm */
+    background-color: rgba(230, 93, 25, 0.685);
+    /* Màu nền */
+    z-index: 1000;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Khi di chuột vào thì hiển thị icon */
+
+.box_itemFood:hover .cart-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box_itemFood .cart-hover:hover {
+    background-color: #f874378c;
+}
+
+
+/* End featured product */
+
+
+/* START FOOD PRODUCT */
+
+.containerFood {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    max-width: 1440px;
+    margin-left: 125px;
+    margin-right: 126px;
+}
+
+.filterF {
+    width: 235px;
+    height: auto;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* Xếp theo cột */
+    margin-right: 24px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+
+/* ---------- */
+
+.filterF .itemFood {
+    margin-bottom: 10px;
+}
+
+.filterF .itemFood input {
+    width: 230px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.filterF .itemFood label {
+    flex: 1;
+}
+
+.filterF .itemFood.submit button {
+    background-color: #f1892f;
+    width: 235px;
+    padding: 10px 0px 10px 0px;
+    color: #fff;
+}
+
+.filterF .itemFood.submit button:hover {
+    background-color: #f18a2fcb;
+}
+
+/*-----------------------*/
+
+.filterF h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filterF ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.filterF .check {
+    margin-right: 10px;
+}
+
+.filterF ul li {
+    margin-bottom: 10px;
+}
+
+.filterF input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+.filterF button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filterF button:hover {
+    background-color: #e67e22;
+    /* Màu nền khi hover */
+}
+
+.popular-products p {
+    margin-bottom: 10px;
+}
+
+.food {
+    margin-bottom: 100px;
+}
+
+.food .top-bar {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.filterF .searchFood {
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.filterF .searchFood input {
+    padding: 5px;
+    border-radius: 5px;
+    height: 25px;
+    width: 235px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.nonListP {
+    margin-top: 150px;
+    text-align: center;
+    margin-left: 150px;
+}
+
+.nonresult {
+    padding-left: 15px;
+    width: 600px;
+}
+
+.fa-ban {
+    margin-right: 5px;
+}
+
+.nonresult i {
+    font-size: 14px;
+    color: rgb(150, 147, 147);   
+}
+
+.productFood {
+    max-width: 1296px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.productFood > .product_itemFood {
+    width: 306px;
+    padding: 0px;
+    height: 390px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #F8F9FA;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.productFood > .product_itemFood:hover {
+    transform: scale(1.05);
+}
+
+.product_itemFood a {
+    text-decoration: none;
+    color: black;
+    /* Loại bỏ gạch chân */
+}
+
+.product_itemFood img {
+    width: 306px;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    padding: 0px;
+}
+
+.product_itemFood .detailH {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    column-gap: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.product_itemFood .detailH .icon-products {
+    text-align: right;
+    display: grid;
+    margin-right: 10px;
+}
+
+.product_itemFood .detailH .icon-products .fa-heart {
+    color: #FD7E14;
+}
+
+
+.product_itemFood .cart-hover {
+    display: none;
+    /* Ban đầu ẩn */
+    position: fixed;
+    width: 50px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Căn giữa nền theo trục X và Y */
+    background-color: rgba(230, 93, 25, 0.685);
+    /* Màu nền */
+    z-index: 1000;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.product_itemFood:hover .cart-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.product_itemFood .cart-hover:hover {
+    background-color: #f874378c;
+}
+
+
+
+/* END FOOD PRODUCT */
+
+.modalFood {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Modal Content */
+
+.modalFood-content {
+    position: relative;
+    background-color: #fdfafa;
+    margin: auto;
+    border: 2px solid rgba(230, 93, 25, 0.685);
+    border-radius: 5px;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+}
+
+.modal-detailFood-img {
+    width: 100px;
+}
+
+/* The Close Button */
+
+.closeFood {
+    position: absolute;
+    color: #fdfafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #F87537;
+}
+
+.closeFood:hover,
+.closeFood:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon-m-contentFood {
+    color: #F87537;
+}
+
+.mc-textFood {
+    margin-top: 10px;
+}
+
+.table-containerFood {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.thead-tableFood {
+    width: 98%;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0;
+    color: #333333d8;
+    border: 1px solid #ccc;
+}
+
+#tblFood tr {
+    height: 27px;
+}
+
+#tblFood tr th {
+    background: #f7f7f7;
+}
+
+#tblFood tr th,
+#tblFood tr td {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+}
+
+#tblFood tr:last-child td {
+    border: none;
+} 
+
+
+/* Căn giữa cho tất cả các ô trừ cột Products */
+
+#tblFood tr th,
+#tblFood tr td:not(:first-child) {
+    text-align: center;
+}
+
+#tblFood tr th:not(:first-child),
+.thead-tableFood tr th:not(:first-child) {
+    border-left: 1px solid #ccc;
+}
+
+
+/* Căn trái cho cột Products */
+
+#tblFood th:first-child,
+#tblFood td:first-child,
+.thead-tableFood th:first-child,
+.thead-tableFood td:first-child {
+    text-align: left;
+    padding-left: 5px;
+    border-left: none;
+}
+
+.thead-tableFood th:nth-child(2),
+#tblFood td:nth-child(2),
+.thead-tableFood th:nth-child(3),
+#tblFood td:nth-child(3),
+.thead-tableFood th:nth-child(4),
+#tblFood td:nth-child(4) {
+    width: 20%;
+    text-align: center;
+}
+
+.modal-detail-Food {
+    display: flex;
+    width: 280px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.modal-detail-Food-img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
+.modal-detail-Food-infor {
+    font-size: 10px;
+    width: 60%;
+}
+
+.modalFood-product-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.modalFood-product-remove,
+.icon-m-content {
+    margin-top: 15px;
+    color: #f87437a1;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.modalFood-product-remove:hover,
+.icon-m-content:hover {
+    color: #F87537;
+}
+
+#text-totalFood {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #333333d8;
+}
+
+#tt-totalFood {
+    font-weight: bold;
+    text-align: right;
+}
+
+.modalFood-button {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn-modalFood-order {
+    width: 120px;
+    height: 30px;
+    background-color: #F87537;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.btn-modalFood-order:hover {
+    background-color: #f87437c3;
+}
+
+.minusQuantityFood {
+    background-color: rgba(255, 0, 0, 0.592);
+}
+
+.plusQuantityFood {
+    background-color: rgba(0, 255, 47, 0.592);
+}
+
+.minusQuantityFood,
+.plusQuantityFood {
+    border: none;
+    border-radius: 5px; 
+}
+
+.mxFood-2 {
+    width: 24px;
+} 
+
+
+/* End modal */
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/* Start footer */
+
+.footer {
+    position: relative;
+    width: 1440px;
+    height: 417px;
+    background-color: #FFF0D9;
+    display: grid;
+    grid-template-rows: 260px 97px;
+    row-gap: 60px;
+}
+
+.footer .dauchan {
+    position: absolute;
+    width: 620.3px;
+    height: 368.5px;
+    padding: 8.94px 0px 39.56px 171.75px;
+}
+
+.footer .tron {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 139px;
+}
+
+.footer .logo {
+    width: 127.27px;
+    height: 30px;
+}
+
+.footer .inforU {
+    width: 1296px;
+    height: 188px;
+    display: grid;
+    grid-template-columns: 349px 82px 111px 150px 173px;
+    column-gap: 109px;
+    padding: 72px 72px 0px 72px;
+}
+
+.footer .infor {
+    display: grid;
+    grid-template-rows: 100px 24px;
+    row-gap: 20px;
+}
+
+.footer .infor>.text {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.footer .text {
+    padding-top: 20px;
+    margin: 0px;
+}
+
+.footer .icon-contact {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.footer .icon-contact>.icon {
+    font-size: 24px;
+}
+
+.footer .title {
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.footer .title>.text:first-child {
+    padding-top: 20px;
+}
+
+.footer .title>.text {
+    padding-top: 16px;
+}
+
+.footer .store {
+    font-size: 16px;
+}
+
+.footer .store>p {
+    margin: 0px;
+}
+
+.footer .store>.br {
+    margin-top: 16px;
+}
+
+.footer .inforD {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 196px;
+}
+
+.footer .text-inforD {
+    margin: 0px;
+    font-size: 14px;
+    padding: 15px 0px 0px 312px;
+}
+
+.footer .icon-pay {
+    margin: 0px;
+    font-size: 24px;
+    padding: 0px 312px 0px 0px;
+}
+
+.footer .icon-pay {
+    display: flex;
+    gap: 30px;
+}
+
+.footer .icon-pay>.icon {
+    font-size: 30px;
+}
+
+
+/* End footer */
