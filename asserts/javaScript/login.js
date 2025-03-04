@@ -127,7 +127,7 @@ loginForm.addEventListener('submit', (event) => {
 
     // Đăng nhập thành công
     alert('Login successfully!');
-    window.location.href ='/pages/homePage.html';
+    window.location.href ='/pages/index.html';
 });
 
 //Password convinience

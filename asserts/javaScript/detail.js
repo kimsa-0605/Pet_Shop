@@ -163,7 +163,7 @@ function dieu_huong(page) {
     } else if (page === 'Food') {
         location.assign("/pages/foodPage.html");
     } else if (page === 'Home') {
-        location.assign("/pages/homePage.html");
+        location.assign("/pages/index.html");
     }else if (page === 'Cart') {
         location.assign("/pages/cartt.html");
     } else if (page === 'User') {
